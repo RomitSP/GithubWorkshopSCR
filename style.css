@@ -26,7 +26,7 @@
     grid-area: nav;
     justify-content: space-between;
     height: auto;
-    margin: auto;
+    margin: 1rem;
     /* align-content: center; */
     align-items: center;
     color: slategray;
@@ -34,7 +34,7 @@
 }
 
 .nav-heading-text {
- margin-left: 3rem;
+ margin-left: 3rem;   
 }
 
 .travel-images {
@@ -49,7 +49,7 @@ a img.option-img-1,
 a img.option-img-2 {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .options {
@@ -57,3 +57,5 @@ a img.option-img-2 {
     display: flex;
     gap: 20px;
 }
+
+
