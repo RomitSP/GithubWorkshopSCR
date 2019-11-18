@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <Title>
+          Registration
+      </Title>
+  </head>
+  <style>
+    *{
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    #myform input[type='text']{
+        background-color: lightblue;
+    }
+    .info {
+        visibility: hidden;
+        position: absolute;
+        top: 100pxpx;
+        right: 25px;
+        width: 20%;
+        border: 1px solid red;
+    }
+  </style>
+  <script type="text/javascript">
+    function confirmchoice() {
+      var myform = document.forms[0];
+
+      if (myform.fname.value == "") {
+        myform.fname.focus();
+        alert("First name can not be blank!");
+        return false;
+      }
+      else if(myform.lname.value == "") {
+        myform.lname.focus();
+        alert("Last name can not be blank!");
+        return false;
+      }
+      else if(myform.prov.value == "") {
+        myform.prov.focus();
+        alert("Please select a Province.");
+        return false;
+      }
+      else if(!checkPC(myform.pCode.value)){
+          myform.pCode.focus();
+          alert("Invalid Postal Code.");
+          return checkPC(myform.pCode.value);
+      }
+
+      return confirm("Are you sure you want to send?");
+    }
+
+    function checkPC(pCode) {
+        var myReg = /^[a-z|A-Z][0-9][a-z|A-Z]\s?[0-9][a-z|A-Z][0-9]$/;
+
+        return myReg.test(pCode);
+    }
+
+    var message = "";
+    var formInfo = new Array();
+
+    formInfo['fname'] = "Enter your first name here";
+    formInfo['lname'] = "Enter your last name here";
+    formInfo['addr'] = "Enter your address name here";
+    formInfo['city'] = "Enter your city name here";
+    formInfo['pCode'] = "Enter your postal code here";
+    formInfo['prov'] = "Enter your 2 digit province code here";
+    formInfo['email'] = "Enter your email here";
+
+    function focusText(element) {
+        document.getElementsByClassName('info')[0].style.visibility = 'visible';
+        document.getElementsByClassName('info')[0].innerHTML = formInfo[element.name];
+    }
+    function blurText() {
+        document.getElementsByClassName('info')[0].style.visibility = 'hidden';
+        document.getElementsByClassName('info')[0].innerHTML = "";
+    }
+  </script>
+
+  <body>
+    <div id="header">
+      <h1 style="color:red">REGISTER</h1>
+    </div>
+
+    <div id="body">
+      <h3>Enter Your Info</h3>
+      <br />
+
+      <div class="info">
+
+      </div>
+
+      <span id="message"></span>
+      <form id="myform" method="post" action="bouncer.php" target="_blank">
+          <label for="fname">First Name:</label><br />
+          <input type="text" name="fname" id="fname"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <label for="lname">Last Name:</label><br />
+          <input type="text" name="lname" id="lname"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <label for="addr">Address:</label><br />
+          <input type="text" name="addr" id="addr"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <label for="city">City:</label><br />
+          <input type="text" name="city" id="city"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <label for="pCode">Postal Code:</label><br />
+          <input type="text" name="pCode" id="pCode"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <label for="prov">Province:</label><br />
+          <select name="prov" id="prov" required="required"
+          onfocus="focusText(this);" onblur="blurText();">
+              <option value="">Select a province</option>
+              <option value="AB">Alberta</option>
+              <option value="BC">British Columbia</option>
+              <option value="MN">Manitoba</option>
+              <option value="ON">Ontario</option>
+              <option value="SK">Saskatchewan</option>
+          </select><br /><br />
+
+          <label for="email">Email Address:</label><br />
+          <input type="text" name="email" id="email"
+          onfocus="focusText(this);" onblur="blurText();"></input><br /><br />
+
+          <input type="submit" name="submit" value="Register" onclick="return confirmchoice();" />
+          <input type="reset" name="reset" value="Reset" onclick="return confirm('Are you sure you want to reset?')"/>
+
+      </form>
+      <br />
+      <a href="index.html">Go Back to Home Page</a>
+    </div>
+
+    <div id="footer">
+      <br />
+      Copyright &copy; 2019 Melchi Travels
+    </div>
+  </body>
+</html>
