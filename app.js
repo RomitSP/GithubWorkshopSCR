@@ -9,7 +9,7 @@ let server = app.listen(8001, ()=> {
                   "Host Address: " + host + "\nPort: " + port);
 });
 
-app.use(express.static('views'));
+app.use(express.static('views', {extensions:['html', 'htm'], index: 'home.html'}));
 app.use(express.static('public'));
 
 
