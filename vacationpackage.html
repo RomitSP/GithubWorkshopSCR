@@ -5,30 +5,52 @@
 		
 		<script>
 		
-		function mexicoVideo() 
+		function caribbeanVideo() 
 		{
-			window.open("https://www.youtube.com/watch?v=xUu6pi0_6DY")
+			window.open("https://www.youtube.com/watch?v=trmEq3e04a4")
 		}
 		
-		function meditVideo() 
+		function polyVideo() 
 		{
-				window.open("https://www.youtube.com/watch?v=DbEM60TyLtA")
+				window.open("https://www.youtube.com/watch?v=ZZ9E-Jadv88")
 		}
 		
-		function africaVideo() 
+		function asiaVideo() 
 		{
-			window.open("https://www.youtube.com/watch?v=IzppFz7RiNg")
+			window.open("https://www.youtube.com/watch?v=vBMBixI40Nw")
 		}
 		
+		function europeVideo() 
+		{
+			window.open("https://www.youtube.com/watch?v=UfEiKK-iX70")
+		}
 		
 		</script>
 		
 		<style>
 		
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+			}
+			
+		
+section {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+		
 		.form {
 		
 		position: absolute;
-		top: 27%;
+		top: 40%;
+		left: 5%;
+		/*border-style: solid;
+		  padding-top: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;*/
 		}
 		
 		.button {
@@ -41,9 +63,12 @@
 		
 		body {
 		
-		background-image: url("traveldestination11.jpg"); 
-		text-align: center;
-		letter-spacing: 1px;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("vacation.jpg"); 	  
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		color: white;
+		padding-top: 140px;
 	
 		}
 		
@@ -52,50 +77,94 @@
 		font-size: 450%;
 		}
 		
-		#mexCSS {
+		#caribbeanCSS {
 		
 		border-style: ridge;
-		height: 325px;
-		width: 300px;
+		height: 250px;
+		width: 250px;
 		background: white;
 		position: absolute; 
-		top: 45%;
-		left:15%;
+		top: 60%;
+		left:3%;
 		text-align: center;
-		background-image: url("mexico.jpeg");
+		background-image: url("caribbean.jpg");
 		 box-shadow: 10px 10px 10px;
-		
-		}
-		
-		#meditCSS {
-		
-		border-style: ridge;
-		height: 325px;
-		width: 300px;
-		background: white;
-		position: absolute; 
-		left: 40%;
-		top: 45%;
-		text-align: center;
-		background-image: url("mediterranean.jpg");
-		box-shadow: 10px 10px 10px;
+		 flex: 40%;
+		margin: 5px;
+		background-color: white;
+		color: black;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin-bottom: 25px;
+		cursor: pointer;
+					<img src="africa.jpg" />
 
 		}
 		
-		#africaCSS {
+		#polyCSS {
 		
 		border-style: ridge;
-		height: 325px;
-		width: 300px;
+		height: 250px;
+		width: 250px;
 		background: white;
 		position: absolute; 
-		right: 15%;
-		top: 45%;
+		top: 60%;
+		left: 30%;
 		text-align: center;
-		background-image: url("africa.jpg");
+		background-image: url("poly.jpg");
 		box-shadow: 10px 10px 10px;
+		flex: 40%;
+		margin: 5px;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin-bottom: 25px;
+		cursor: pointer;
 
 		}
+		
+		#asiaCSS {
+		
+		border-style: ridge;
+		height: 250px;
+		width: 250px;
+		background: white;
+		position: absolute; 
+		top: 60%;
+		left:55%;;
+		text-align: center;
+		background-image: url("asia.jpg");
+		box-shadow: 10px 10px 10px;
+		flex: 40%;
+		margin: 5px;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin-bottom: 25px;
+		cursor: pointer;
+
+
+		}
+		
+				#europeCSS {
+		
+		border-style: ridge;
+		height: 250px;
+		width: 250px;
+		background: white;
+		position: absolute; 
+		top: 60%;
+		left:80%;
+		text-align: center;
+		background-image: url("europe.jpg");
+		box-shadow: 10px 10px 10px;
+		flex: 40%;
+		margin: 5px;
+		background-color: white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		margin-bottom: 25px;
+		cursor: pointer;
+
+
+		}
+
 
 * { box-sizing: border-box; }
 body {
@@ -133,7 +202,7 @@ input[type=submit] {
 .autocomplete-items div {
   padding: 10px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: DodgerBlue;
   border-bottom: 1px solid #d4d4d4;
 }
 .autocomplete-items div:hover {
@@ -143,15 +212,87 @@ input[type=submit] {
   background-color: DodgerBlue !important;
   color: #ffffff;
 }
-		
+
+header {  
+  position: fixed; 			
+	top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+a {
+  text-decoration: none;
+}
+
+#nav {
+  background-color: lightblue;
+  padding: 5px;
+  text-align: center;
+  
+}
+#nav a:link, #bottomNavLinks a:link {
+  color:darkblue;
+}
+#nav a:hover, #bottomNavLinks a:hover {
+  color:#ffffff;
+  cursor: pointer;
+}
+#nav a:active {
+  color:#f0f0f0;
+  background-color:#00ff00;
+}
+
+
+.banner{
+  color: white;
+  background-image: url('positanobanner.jpg');
+  height: 100px;
+  vertical-align: middle;
+}
+
+.polaroid {
+  flex: 40%;
+  margin: 5px;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+#bottomNav {
+  color: black;
+  position: absolute; 
+		right: 45%;
+		top: 97%;
+}
+
+#footer {
+  margin-top: 200px;
+  color: black;
+  position: absolute;
+  top: 120%;
+  left: 45%;
+}
 		</style>
 		
 		</head>
 		<body>
 		
-		<header>
-		<h1>Vacation Package</h1>
-		</header>
+		    <header>
+
+      <div class="banner">
+        <h1 id="welcome">
+          Vacation Packages
+        </h1>
+      </div>
+      <div id="nav">
+        <a href="register">Register </a> |
+        <a href="Home">Home </a> |
+        <a href="contact">Contact Us </a> 
+  
+      </div>
+    </header>
 
 <hr>	
 <form class="form" autocomplete="off">
@@ -168,9 +309,11 @@ input[type=submit] {
 
 <label for="vacapackage"> Package Selected:</label>
 <select id="vacapackage" name="vacapackage" required="required" />
-	<option value="mexico">Mexican Getaway</option>
-	<option value="mediterranean">Mediterranean Cruise</option>
-	<option value="africa">African Safari</option>
+	<option value="caribbean">Caribbean New Year</option>
+	<option value="polynesia">Polynesian Paradise</option>
+	<option value="asia">Asian Expedition</option>
+	<option value="europe">European Vacation</option>
+
 </select>
 
 	</div>
@@ -285,41 +428,80 @@ var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla"
 autocomplete(document.getElementById("myInput"), countries);
 </script>
 
-<div id="mexCSS">	
-		<h3>Mexican Getaway</h3>
-	      <p>Mexico is known for its Pacific and Gulf of Mexico 
-		  beaches and its diverse landscape of mountains, deserts 
-		  and jungles. Ancient ruins such as Teotihuacán and the 
-		  Mayan city of Chichén Itzá are scattered throughout the country, 
-		  as are Spanish colonial-era towns. In capital Mexico City, upscale 
-		  shops, renowned museums and gourmet restaurants cater to modern life.
-			</p>
-			<button class="button" onclick="mexicoVideo()">See Video</button>
+
+
+<div  id="caribbeanCSS">	
+		<h3>Caribbean New Year</h3>
+	      <p>Cruise the Carribbean & Celebrate the New Year! <br />
+			</p>  <br />
+		  <br />
+			<button class="button" style="width:100px;height:30px;" onclick="carribbeanVideo()">See Video</button>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h4>Package Base Price:</h4>
+			<h2>4800$</h2>
+
 </div>
 
-<div id="meditCSS">	
-		<h3>Mediterranean Cruise</h3>
-	      <p>The Mediterranean Sea is a sea connected to the Atlantic Ocean, 
-		  surrounded by the Mediterranean Basin and almost completely enclosed 
-		  by land: on the north by Southern Europe and Anatolia, on the south by 
-		  North Africa and on the east by the Levant
+<div  id="polyCSS">	
+		<h3>Polynesian Paradise</h3>
+	      <p>8 Day All Inclusive Hawaiian Vacation <br />
 			</p>
-			<button class="button" onclick="meditVideo()">See Video</button>
+			  <br />
+		  <br />
+			<button class="button" style="width:100px;height:30px;" onclick="polyVideo()">See Video</button>
+			<br />
+			<br />
+			<br />
+			<br />
+		<h4>Package Base Price: </h4>
+		<h2>3000$</h2>
+
+
 </div>
 
-<div id="africaCSS">	
-		<h3>African Safari</h3>
-	      <p>Africa is the world's second-largest and second-most populous continent. 
-		  At about 30.3 million km² including adjacent islands, it covers 6% of Earth's 
-		  total surface area and 20% of its land area. With 1.3 billion people as of 2018,
-		  it accounts for about 16% of the world's human population.
+<div  id="asiaCSS">	
+		<h3>Asian Expedition</h3>
+	      <p>Airfaire, Hotel and Eco Tour. <br />
 		  </p>
-			<button class="button" onclick="africaVideo()">See Video</button>
+		   <br />
+		  <br />
+		  <br />
+			<button class="button" style="width:100px;height:30px;" onclick="asiaVideo()">See Video</button>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h4>Package Base Price: </h4>
+			<h2>2800$</h2>
+
+
 </div>
 
-	
-		
-		
-		
+<div  id="europeCSS">	
+		<h3>European Vacation</h3>
+	      <p>Euro Tour With Rail Pass and Travel Insurance <br />
+		  </p>
+		  <br />
+		  <br />
+			<button class="button" style="width:100px;height:30px;" onclick="europeVideo()">See Video</button>
+			<br />
+			<br />
+			<br />
+			<br />
+			<h4>Package Base Price: </h4>
+			<h2>3000$</h2>
+
+</h4>
+</div>
+
+
+
+      <div id="footer">
+	  <hr>
+          Copyright &copy; 2019 Melchi
+        </div>
 		</body>
 </html>
