@@ -1,0 +1,10 @@
+.img-thumbnail-agent {
+    border-radius: 50%;
+    height: 7rem;
+    width: 7rem;
+    margin: 1rem;
+}
+
+.agent-card-list {
+    margin-top: 2rem;
+}
