@@ -1,0 +1,25 @@
+{
+  "name": "githubworkshopscr",
+  "version": "1.0.0",
+  "description": "Repo created as part of Github Class at SAIT's OOSD.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomitSP/GithubWorkshopSCR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomitSP/GithubWorkshopSCR/issues"
+  },
+  "homepage": "https://github.com/RomitSP/GithubWorkshopSCR#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  }
+}
