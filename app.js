@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const ejs = require('ejs');
 
+	 var data=[];
+
+
 let server = app.listen(8001, () => {
    var host = server.address().address;
    var port = server.address().port;
@@ -28,7 +31,6 @@ let sqlCon = mysql.createPool({
 
 app.post("/vPackages_form", (req, res)=>{
 	console.log("afjkejfka");
-	 var data=[];
 	data[0] = req.body.dateLeaving;
 	data[1] = req.body.dateReturning;
 	data[2] = req.body.leavingFrom;
