@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <Title>
+      Contact Us
+    </Title>
+    <link href="chi_contact_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="script.js"></script>
+  </head>
+  
+  <body>
+    <!-- Fixed Welcome banner with site links -->
+    <header>
+      <div class="banner">
+        <h1 id="welcome">
+          Welcome to Travel Experts
+        </h1>
+      </div>
+      <div id="nav">
+        <a href="home">Home </a> |
+        <a href="vPackages">Packages </a> |
+        <a href="register">Register </a> |
+        <a href="about">About Us </a> |
+        <a href="contact">Contact Us </a> |
+        <a href="https://www.expedia.com/" target="_blank">Expediaa </a> |
+        <a href="https://www.travelocity.com/" target="_blank">Travelocity </a> |
+        <a href="https://www.booking.com/" target="_blank">Bookings.com </a>
+      </div>
+    </header>
+    <main>
+      <section>
+
+        <!-- Placeholder section for choosing date and time of travel for client -->
+        <div id="features"><h1>Contact Us</h1></div>
+
+        <!-- This section is to place 2 'polaroid like' images side by side with description -->
+        <div class="locations">
+          <div class="polaroid">
+            <div class="mapouter" style="z-index:0;">
+              <div class="gmap_canvas">
+                <iframe width="600" height="500" id="gmap_canvas" 
+                  src="https://maps.google.com/maps?q=stangrad%20sait&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowtransparency="yes">
+                </iframe>
+                <a href="https://www.embedgooglemap.net">
+                  embedgooglemap.net
+                </a>
+              </div>
+              <style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas 
+                {overflow:hidden;background:none!important;height:500px;width:600px;}
+              </style>
+            </div>
+            <div class="places">
+              <h4>Travel Experts</h4>
+              <p>1301 16Ave NW</p>
+              <p>Calgary, AB</p>
+              <p>T2M 0L4</p>
+              <p>Canada</p>
+            </div>
+          </div>
+          <% agents.forEach ( agent => { %>
+            <div class="polaroid">
+                <img src="..\media\agent.svg"  width="50px"/>
+                <div class="places">
+                    <p><%= agent.AgtFirstName %> <%= agent.AgtLastName %> </p>
+                    <p>ID: <%= agent.AgentId %></p>
+                    <p>Phone: <%= agent.AgtBusPhone %></p>
+                    <p>Email: <a href="mailto:<%= agent.AgtEmail %>"><%= agent.AgtEmail %></a></p>
+                    <p>Position: <%= agent.AgtPosition %></p>
+                    <p>Agency: <%= agent.AgencyId %></p>
+                </div>
+              </div>
+          <% }); %>  
+        </div>
+
+        <!-- Bottom site navigation links -->
+        <div id="bottomNav">
+          <div id="bottomNavImage">
+            <img src="..\media/register.jpg" height=40 alt="Register Icon" Title="Register" />
+            <img src="..\media/contact.jpg" height=40 alt="Contact Us Icon" Title="Contact Us" />
+          </div>
+          <div id="bottomNavLinks">
+            <a href="register.html">Register </a>|
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Footer with Copyright message -->
+        <div id="footer">
+          Copyright &copy; 2019 Melchi
+        </div>
+
+      </section>
+    </main>
+  </body>
+</html>
