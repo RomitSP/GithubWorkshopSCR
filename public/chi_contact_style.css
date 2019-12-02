@@ -56,7 +56,7 @@
     display: inline-block;
   }
   div.polaroid {
-    flex: 40%;
+    flex: 100%;
     margin: 5px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

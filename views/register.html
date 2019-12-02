@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
+    
   <head>
-      <Title>
-          Registration
-      </Title>
+    <Title>
+      Contact Us
+    </Title>
+    <link href="chi_reg_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="chi_reg_script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   </head>
-  <link href="chi_reg_style.css" rel="stylesheet" />
-  <script type="text/javascript" src="chi_reg_style.js"></script>
-
+  
   <body>
-    <div class="form-area">
+    <!-- Fixed Welcome banner with site links -->
+    <header>
+      <div class="navbar navbar-expand-sm">
+        Travel Experts
+        <div id="nav">
+          <a href="home">Home </a> |
+          <a href="vPackages">Packages </a> |
+          <a href="register">Register </a> |
+          <a href="contact">Contact Us </a> |
+          <a href="https://www.expedia.com/" target="_blank">Expedia </a> |
+          <a href="https://www.travelocity.com/" target="_blank">Travelocity </a> |
+          <a href="https://www.booking.com/" target="_blank">Bookings.com </a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section>
+
+        <div class="form-area">
           <div id="header">
             <h1 style="color:red">REGISTER</h1>
-          </div>
-      
-          <div id="body">
             <h3>Enter Your Info</h3>
             <br />
             <p><b class="required">*</b><i>Required</i></p>
@@ -23,7 +41,7 @@
                 <label for="fname"><b class="required">*</b>First Name:</label><br />
                 <input type="text" name="fname" id="fname"
                 onfocus="focusText(this);" onblur="blurText(this);"></input>
-                <span class="info"></span><br /><br />
+                <span class="info">test</span><br /><br />
       
                 <label for="lname"><b class="required">*</b>Last Name:</label><br />
                 <input type="text" name="lname" id="lname"
@@ -89,16 +107,27 @@
                 <input type="reset" name="reset" value="Reset" onclick="return confirm('Are you sure you want to reset?')"/>
       
             </form>
-           
-            <br />
-            <a href="/">Go Back to Home Page</a>
           </div>
-      
+        </div>
+          
+          <!-- Bottom site navigation links -->
+          <div id="bottomNav">
+            <div id="bottomNavImage">
+              <img src="..\media/register.jpg" height=40 alt="Register Icon" Title="Register" />
+              <img src="..\media/contact.jpg" height=40 alt="Contact Us Icon" Title="Contact Us" />
+            </div>
+            <div id="bottomNavLinks">
+              <a href="register.html">Register </a>|
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Footer with Copyright message -->
           <div id="footer">
-            <br />
-            Copyright &copy; 2019 Melchi Travels
+            Copyright &copy; 2019 Travel Experts
           </div>
-    </div>
-    
+
+      </section>
+    </main>
   </body>
 </html>

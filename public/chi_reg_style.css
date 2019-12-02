@@ -1,24 +1,60 @@
-*{
+* {
+  margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
-body {
+a {
+  text-decoration: none;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.jumbotron {
+  padding: 0!;
+}
+#nav a:link, #bottomNavLinks a:link {
+  color:darkblue;
+}
+#nav a:hover, #bottomNavLinks a:hover {
+  color:#ffffff;
+  cursor: pointer;
+}
+#nav a:active {
+  color:#f0f0f0;
+  background-color:#00ff00;
+}
+main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
   url('../media/vacation.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: white;
+  padding-top: 140px;
 }
-
-a {
-  text-decoration: none;
+section {
+  margin-left: 12%;
+  margin-right: 12%;
+}
+header h1, #nav {
+  text-align: center;
+}
+#bottomNavLinks {
+  color: black;
+}
+#footer {
+  margin-top: 200px;
+  color: black;
 }
 
 .form-area {
   width: 60%;
-  box-sizing: border-box;
   background: rgba(0,0,0,0.7);
   padding: 40px;
+  border: 1px solid grey;
 }
 
 input[type='text'], select{
