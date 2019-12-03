@@ -20,17 +20,19 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-/*let sqlCon = mysql.createPool({
+let sqlCon = mysql.createPool({
    connectionLimit: 10,
    host: 'localhost',
    user: 'root',
-   password: 'password',
+   password: '',
    database: 'travelexperts'
-});*/
+});
 
 app.get('/vPackages_form', (req, res) => {
    let sql = "SELECT `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, " +
              "`PkgBasePrice` FROM `packages` ";
+			 
+  
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;

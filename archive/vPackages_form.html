@@ -1,287 +1,73 @@
 <!DOCTYPE html>
-<!-- saved from url=(0079)file:///C:/Users/519464/Documents/GitHub/GithubWorkshopSCR/vacationpackage.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html>
+	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>   Vacation Package  </title>
- <link href="file:///C:/Users/519464/Documents/GitHub/GithubWorkshopSCR/css/bootstrap.min.css" rel="stylesheet">
- <link rel="stylesheet" href="./Vacation Package_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link href="css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		
-		<script>
+<script src="jsfunctions.js">	
+</script>
 		
-		function caribbeanVideo() 
-		{
-			window.open("https://www.youtube.com/watch?v=trmEq3e04a4")
-		}
-		
-		function polyVideo() 
-		{
-				window.open("https://www.youtube.com/watch?v=ZZ9E-Jadv88")
-		}
-		
-		function asiaVideo() 
-		{
-			window.open("https://www.youtube.com/watch?v=vBMBixI40Nw")
-		}
-		
-		function europeVideo() 
-		{
-			window.open("https://www.youtube.com/watch?v=UfEiKK-iX70")
-		}
-		
-		</script>
-		
-		<style>
-		
-		.blue {
+<style>
+	.blue {
 			color:blue;
-			font-weight:bold
-		}
+			font-weight:bold;
+	}
 		
-			.black {
+		
+	.black {
 			color:black;
 			font-weight:bold
-		}
-		* {
-			margin: 0;
-			padding: 0;
-			font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-			}
-			
+	}
 		
-				
-		.form {
-		
-		/*border-style: solid;
-		  padding-top: 20px;
-		padding-right: 20px;
-		padding-bottom: 20px;
-		padding-left: 20px;*/
-		}
-		
-		.button {
-		 background-color: DodgerBlue;
-		 color: #fff;
-		 width:100px;
-		 height:30px;
-		
-		box-shadow: 10px 10px 10px;
-		
-		}
-		
-		body {
-		
-		background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("vacation.jpg"); 	  
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-attachment: fixed;
-		color: white;
-		padding-top: 140px;
-	
-		}
-		
-		h1 {
+	h1 {
 		text-align: center;
-		font-size: 450%;
-		}
+		font-size: 265%;
+	}
 		
-		#caribbeanCSS {
-		
-		border-style: ridge;
-		background: white;
+		h2 {
 		text-align: center;
-		background-image: url("caribbean.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-color: white;
-		color: white;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		 text-shadow: 1px 1px white;
+		font-size: 185%;
+	}
+</style>
 
-		}
-		
-		#polyCSS {
-		
-		border-style: ridge;
-		background: white;
-		text-align: center;
-		background-image: url("poly.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-color: white;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		text-shadow: 1px 1px white;
-
-
-		}
-		
-		#asiaCSS {
-		
-		border-style: ridge;
-		background: white;
-		text-align: center;
-		background-image: url("asia.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-color: white;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		text-shadow: 1px 1px white;
-
-
-
-		}
-		
-		#europeCSS {
-		border-style: ridge;
-		background: white;
-		text-align: center;
-		background-image: url("europe.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-color: white;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-		text-shadow: 1px 1px white;
-
-
-
-		}
-
-
-* { box-sizing: border-box; }
-body {
-  font: 16px Arial;
-}
-.autocomplete {
-  position: relative;
-  display: inline-block;
-}
-input {
-  border: 1px solid ;
-  background-color: white;
-  padding: 10px;
-  font-size: 16px;
-}
-input[type=text] {
-  background-color: white;
-  width: 15%;
-}
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-}
-.autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  border-bottom: none;
-  border-top: none;
-  z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
-  top: 100%;
-  left: 0;
-  right: 0;
-}
-.autocomplete-items div {
-  padding: 10px;
-  cursor: pointer;
-  background-color: DodgerBlue;
-  border-bottom: 1px solid #d4d4d4;
-}
-.autocomplete-items div:hover {
-  background-color: #e9e9e9;
-}
-.autocomplete-active {
-  background-color: DodgerBlue !important;
-  color: #ffffff;
-}
-
-header {  
-  position: fixed; 			
-	top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 99;
-}
-
-a {
-  text-decoration: none;
-}
-
-#nav {
-  background-color: lightblue;
-  padding: 5px;
-  text-align: center;
-  
-}
-#nav a:link, #bottomNavLinks a:link {
-  color:darkblue;
-}
-#nav a:hover, #bottomNavLinks a:hover {
-  color:#ffffff;
-  cursor: pointer;
-}
-#nav a:active {
-  color:#f0f0f0;
-  background-color:#00ff00;
-}
-
-
-.banner{
-  color: white;
-  background-image: url('positanobanner.jpg');
-  height: 100px;
-  vertical-align: middle;
-
-}
-
-#bottomNav {
-  color: black;
-  position: absolute; 
-		right: 45%;
-		top: 97%;
-}
-
-#footer {
-  margin-top: 200px;
-  color: black;
-  position: absolute;
-  top: 120%;
-  left: 45%;
-}
-		</style>
-		
-		</head>
-		<body>
-		
-		    <header>
-
+</head>
+<body>
+	<header>
 		<div class="banner">
-        <h1 id="welcome">
-          Vacation Packages
-        </h1>
+			<h1 id="welcome">Travel Experts</h1>
+			<h2 class="subtitle">Vacation Packages</h2>
 		</div>
 		
-      <div id="nav">
-        <a href="file:///C:/Users/519464/Documents/GitHub/GithubWorkshopSCR/register">Register </a> |
-        <a href="file:///C:/Users/519464/Documents/GitHub/GithubWorkshopSCR/Home">Home </a> |
-        <a href="file:///C:/Users/519464/Documents/GitHub/GithubWorkshopSCR/contact">Contact Us </a> 
- 
-      </div>
-    </header>
+		<div id="nav">
+			<a href="register">Register </a> |
+			<a href="Home">Home </a> |
+			<a href="contact">Contact Us </a> 
+		</div>
+	</header>
+	
+
 
 <hr>	
-<form class="form" autocomplete="off">
+
+<form class="form-inline justify-content-center" method="post" action="/vPackages_form"  class="form-inline" class="form" autocomplete="off">
 	<div class="autocomplete">
 
-<label for="myInput"> Leaving From:</label>
-<input type="text" id="myInput" name="leavingfrom" required="required">
 
-<label for="dateleaving"> Date Leaving:</label>
-<input type="date" id="dateleaving" name="dateleaving" required="required">
+<label class="sr-only" for="dateLeaving"> Date Leaving:</label>
+<input type="date" id="dateLeaving" name="dateLeaving" class="form-control mb-2 mr-sm-2" required="true" placeholder="Date Leaving" />
 
-<label for="datereturning"> Date Returning:</label>
-<input type="date" id="datereturning" name="datereturning" required="required">
+<label class="sr-only" for="dateReturning"> Date Returning:</label>
+<input type="date" id="dateReturning" name="dateReturning" class="form-control mb-2 mr-sm-2" required="true" placeholder="Date Returning" />
 
-<label for="vacapackage"> Package Selected:</label>
-<select id="vacapackage" name="vacapackage" required="required">
+<label class="sr-only" for="leavingFrom"> Leaving From:</label>
+<input type="text" id="leavingFrom" name="leavingFrom" class="form-control mb-2 mr-sm-2" required="true" placeholder="Leaving From" />
+
+
+<label class="sr-only" for="vacaPackage"> Package Selected:</label>
+<select id="vacaPackage" name="vacaPackage" class="form-control mb-2 mr-sm-2" required="true" placeholder="Choose Your Package"  />
 	<option value="caribbean">Caribbean New Year</option>
 	<option value="polynesia">Polynesian Paradise</option>
 	<option value="asia">Asian Expedition</option>
@@ -289,11 +75,36 @@ a {
 
 </select>
 
-	</div>
 
-<input type="submit" value="Submit">
+	</div>
+	<br />
+
+  <input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary mb-2"></input>
 
 </form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Congrats! You are on your way to paradise!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Start Your Journey!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 <script>
@@ -399,68 +210,78 @@ function autocomplete(inp, arr) {
 var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
 /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
-autocomplete(document.getElementById("myInput"), countries);
+autocomplete(document.getElementById("leavingFrom"), countries);
 </script>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
 
 
 <div class="container">
 <div class="row">
 <div class="col-sm-6" id="caribbeanCSS">
-		<h3>Caribbean New Year</h3>
-	      <p class="black">Cruise the Carribbean &amp; Celebrate the New Year!
+		<h3><%= packages[0].PkgName %></h3>
+	      <p class="black"> <%= packages[0].PkgDesc%>
 			</p>  
-			<br>
-			<button class="button" style="width:100px;height:30px;" onclick="carribbeanVideo()">See Video</button>
-			<br>
+			<p>Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[0].PkgEndDate.toDateString() %></p>
+			<br />
+			<button class="btn btn-primary mb-2" onclick="caribbeanVideo()">See Video</button>
+			<br />
 			<h4 class="black">Package Base Price:</h4>
-			<h2 class="blue">4800$</h2>
+			<h2 class="blue">$<%= packages[0].PkgBasePrice%></h2>
 
 </div>	
 
-<div class="col-sm-6" id="polyCSS">
+<div class="col-sm-6"  id="polyCSS">
 	
-		<h3>Polynesian Paradise</h3>
-	      <h5 class="black">8 Day All Inclusive Hawaiian Vacation</h5> 
-		  <br>
-			<button class="button" onclick="polyVideo()">See Video</button>
-			<br>
+		<h3><%= packages[1].PkgName %></h3>
+	      <h5 class="black"><%= packages[1].PkgDesc%></h5> 
+		  <p>Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[1].PkgEndDate.toDateString() %></p>
+		  <br />
+			<button class="btn btn-primary mb-2" onclick="polyVideo()">See Video</button>
+			<br />
 		<h4>Package Base Price: </h4>
-		<h2 class="blue">3000$</h2>
+		<h2 class="blue">$<%= packages[1].PkgBasePrice%></h2>
 
 </div>
 </div>
 <div class="row">
-<div class="col-sm-6" id="asiaCSS">	
+<div class="col-sm-6"  id="asiaCSS">	
 
-		<h3>Asian Expedition</h3>
-	      <p class="black">Airfaire, Hotel and Eco Tour. 
+		<h3><%= packages[2].PkgName %></h3>
+	      <p class="black"><%= packages[2].PkgDesc%>
 		  </p>
-		  <br>
-			<button class="button" onclick="asiaVideo()">See Video</button>
-			<br>
+		  <p>Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[2].PkgEndDate.toDateString() %></p>
+		  <br />
+			<button class="btn btn-primary mb-2" onclick="asiaVideo()">See Video</button>
+			<br />
 			<h4>Package Base Price: </h4>
-			<h2 class="blue">2800$</h2>
+			<h2 class="blue" >$<%= packages[2].PkgBasePrice%></h2>
 
 
 </div>
 
-<div class="col-sm-6" id="europeCSS">	
+<div class="col-sm-6"  id="europeCSS">	
 
-		<h3>European Vacation</h3>
-	      <h5 class="black">Euro Tour With Rail Pass and Travel Insurance </h5>
-		  <br>
-			<button class="button" onclick="europeVideo()">See Video</button>
-			<br>
+		<h3><%= packages[3].PkgName %></h3>
+	      <h5 class="black"><%= packages[3].PkgDesc%></h5>
+		  <p>Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[3].PkgEndDate.toDateString() %></p>
+		  <br />
+			<button class="btn btn-primary mb-2" onclick="europeVideo()">See Video</button>
+			<br />
+			
 			<h4>Package Base Price: </h4>
-			<h2 class="blue">3000$</h2>
+			<h2 class="blue">$<%= packages[3].PkgBasePrice%></h2>
 </div>
 </div>
 </div>
@@ -468,11 +289,11 @@ autocomplete(document.getElementById("myInput"), countries);
 
       <div id="footer">
 	  <hr>
-          Copyright © 2019 
+          Copyright &copy; 2019 
         </div>
-		<script src="./Vacation Package_files/jquery-3.3.1.slim.min.js.download" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="./Vacation Package_files/popper.min.js.download" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="./Vacation Package_files/bootstrap.min.js.download" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		
-		
-</body></html>
+		</body>
+</html>

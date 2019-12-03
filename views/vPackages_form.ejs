@@ -10,7 +10,7 @@
 <script src="jsfunctions.js">	
 </script>
 		
-<!--<style>
+<style>
 	.blue {
 			color:blue;
 			font-weight:bold;
@@ -32,7 +32,7 @@
 		font-size: 185%;
 	}
 </style>
--->
+
 </head>
 <body>
 	<header>
@@ -57,17 +57,17 @@
 
 
 <label class="sr-only" for="dateLeaving"> Date Leaving:</label>
-<input type="date" id="dateLeaving" name="dateLeaving" class="form-control mb-2 mr-sm-2" required="required" placeholder="Date Leaving" />
+<input type="date" id="dateLeaving" name="dateLeaving" class="form-control mb-2 mr-sm-2" required="true" placeholder="Date Leaving" />
 
 <label class="sr-only" for="dateReturning"> Date Returning:</label>
-<input type="date" id="dateReturning" name="dateReturning" class="form-control mb-2 mr-sm-2" required="required" placeholder="Date Returning" />
+<input type="date" id="dateReturning" name="dateReturning" class="form-control mb-2 mr-sm-2" required="true" placeholder="Date Returning" />
 
 <label class="sr-only" for="leavingFrom"> Leaving From:</label>
-<input type="text" id="leavingFrom" name="leavingFrom" class="form-control mb-2 mr-sm-2" required="required" placeholder="Leaving From" />
+<input type="text" id="leavingFrom" name="leavingFrom" class="form-control mb-2 mr-sm-2" required="true" placeholder="Leaving From" />
 
 
 <label class="sr-only" for="vacaPackage"> Package Selected:</label>
-<select id="vacaPackage" name="vacaPackage" class="form-control mb-2 mr-sm-2" required="required" placeholder="Choose Your Package"  />
+<select id="vacaPackage" name="vacaPackage" class="form-control mb-2 mr-sm-2" required="true" placeholder="Choose Your Package"  />
 	<option value="caribbean">Caribbean New Year</option>
 	<option value="polynesia">Polynesian Paradise</option>
 	<option value="asia">Asian Expedition</option>
@@ -79,7 +79,7 @@
 	</div>
 	<br />
 
-  <input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary mb-2">Submit</input>
+  <input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary mb-2"></input>
 
 </form>
 
@@ -89,17 +89,15 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Congrats! You are on your way to paradise!</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Start Your Journey!</button>
       </div>
     </div>
   </div>
@@ -223,56 +221,66 @@ autocomplete(document.getElementById("leavingFrom"), countries);
 <br />
 
 
+
 <div class="container">
 <div class="row">
 <div class="col-sm-6" id="caribbeanCSS">
-		<h3>Caribbean New Year</h3>
-	      <p class="black">Cruise the Carribbean & Celebrate the New Year!
+		<h3><%= packages[0].PkgName %></h3>
+	      <p class="black"> <%= packages[0].PkgDesc%>
 			</p>  
+			<p>Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[0].PkgEndDate.toDateString() %></p>
 			<br />
 			<button class="btn btn-primary mb-2" onclick="caribbeanVideo()">See Video</button>
 			<br />
 			<h4 class="black">Package Base Price:</h4>
-			<h2 class="blue">4800$</h2>
+			<h2 class="blue">$<%= packages[0].PkgBasePrice%></h2>
 
 </div>	
 
 <div class="col-sm-6"  id="polyCSS">
 	
-		<h3>Polynesian Paradise</h3>
-	      <h5 class="black">8 Day All Inclusive Hawaiian Vacation</h5> 
+		<h3><%= packages[1].PkgName %></h3>
+	      <h5 class="black"><%= packages[1].PkgDesc%></h5> 
+		  <p>Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[1].PkgEndDate.toDateString() %></p>
 		  <br />
 			<button class="btn btn-primary mb-2" onclick="polyVideo()">See Video</button>
 			<br />
 		<h4>Package Base Price: </h4>
-		<h2 class="blue">3000$</h2>
+		<h2 class="blue">$<%= packages[1].PkgBasePrice%></h2>
 
 </div>
 </div>
 <div class="row">
 <div class="col-sm-6"  id="asiaCSS">	
 
-		<h3>Asian Expedition</h3>
-	      <p class="black">Airfaire, Hotel and Eco Tour. 
+		<h3><%= packages[2].PkgName %></h3>
+	      <p class="black"><%= packages[2].PkgDesc%>
 		  </p>
+		  <p>Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[2].PkgEndDate.toDateString() %></p>
 		  <br />
 			<button class="btn btn-primary mb-2" onclick="asiaVideo()">See Video</button>
 			<br />
 			<h4>Package Base Price: </h4>
-			<h2 class="blue" >2800$</h2>
+			<h2 class="blue" >$<%= packages[2].PkgBasePrice%></h2>
 
 
 </div>
 
 <div class="col-sm-6"  id="europeCSS">	
 
-		<h3>European Vacation</h3>
-	      <h5 class="black">Euro Tour With Rail Pass and Travel Insurance </h5>
+		<h3><%= packages[3].PkgName %></h3>
+	      <h5 class="black"><%= packages[3].PkgDesc%></h5>
+		  <p>Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
+            <p>End Date: <%= packages[3].PkgEndDate.toDateString() %></p>
 		  <br />
 			<button class="btn btn-primary mb-2" onclick="europeVideo()">See Video</button>
 			<br />
+			
 			<h4>Package Base Price: </h4>
-			<h2 class="blue">3000$</h2>
+			<h2 class="blue">$<%= packages[3].PkgBasePrice%></h2>
 </div>
 </div>
 </div>
