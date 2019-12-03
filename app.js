@@ -24,18 +24,16 @@ let sqlCon = mysql.createPool({
    connectionLimit: 10,
    host: 'localhost',
    user: 'root',
-   password: '',
+   password: 'password',
    database: 'travelexperts'
 });
 
 
 app.post("/vPackages_form", (req, res)=>{
-	console.log("afjkejfka");
 	data[0] = req.body.dateLeaving;
 	data[1] = req.body.dateReturning;
 	data[2] = req.body.leavingFrom;
 	data[3] = req.body.vacaPackage;
-	data[4] = 1;
 
 	console.log(req.body.dateLeaving);
 
@@ -44,8 +42,8 @@ app.post("/vPackages_form", (req, res)=>{
 		if (err) throw err;
 		
 		var sql = "INSERT INTO `orders`(`DateLeaving`, `DateReturning`,"
-			+ " `LeavingFrom`, `PackageChosen`, OrderId`) "
-			+ "VALUES (?,?,?,?,?)";
+			+ " `LeavingFrom`, `PackageChosen`) "
+			+ "VALUES (?,?,?,?)";
 		sqlCon.query(sql, data, (err, result, fields)=>{
 			if (err) throw err;
 			console.log(result);
