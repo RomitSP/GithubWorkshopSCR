@@ -46,6 +46,24 @@ app.get('/vPackages', (req, res) => {
 });
 
 // Render with EJS
+app.get('/chi_contact', (req, res) => {
+
+   let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," + 
+             " `AgtPosition`, `AgencyId` FROM `agents`";
+
+   sqlCon.getConnection((err, connection) => {
+      if (err) throw err;
+      console.log('Connected!');
+
+      sqlCon.query(sql, (err, agents) => {
+         if(err) throw err;
+         res.render('chi_contact', { agents });
+         connection.release();
+      });
+   });
+});
+
+// Render with EJS
 app.get('/contact', (req, res) => {
 
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," + 
@@ -57,6 +75,7 @@ app.get('/contact', (req, res) => {
 
       sqlCon.query(sql, (err, agents) => {
          if(err) throw err;
+         console.log(agents);
          res.render('contact', { agents });
          connection.release();
       });
