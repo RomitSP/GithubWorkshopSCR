@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <Title>
+      Contact Us
+    </Title>
+    <link href="chi_reg_style.css" rel="stylesheet" />
+    <script type="text/javascript" src="chi_reg_script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <!-- Fixed Welcome banner with site links -->
+    <header>
+      <div class="navbar navbar-expand-sm">
+        Travel Experts
+        <div id="nav">
+          <a href="home">Home </a> |
+          <a href="vPackages">Packages </a> |
+          <a href="register">Register </a> |
+          <a href="contact">Contact Us </a> |
+          <a href="https://www.expedia.com/" target="_blank">Expedia </a> |
+          <a href="https://www.travelocity.com/" target="_blank">Travelocity </a> |
+          <a href="https://www.booking.com/" target="_blank">Bookings.com </a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <section>
+
+        <div class="form-area">
+          <div id="header">
+            <h1 style="color:red">REGISTER</h1>
+            <h3>Enter Your Info</h3>
+            <br />
+            <p><b class="required">*</b><i>Required</i></p>
+            <form id="myform" method="post" action="/register">
+                
+                <label for="fname"><b class="required">*</b>First Name:</label><br />
+                <input type="text" name="fname" id="fname"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info">test</span><br /><br />
+      
+                <label for="lname"><b class="required">*</b>Last Name:</label><br />
+                <input type="text" name="lname" id="lname"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="addr"><b class="required">*</b>Address:</label><br />
+                <input type="text" name="addr" id="addr"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="city"><b class="required">*</b>City:</label><br />
+                <input type="text" name="city" id="city"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="prov"><b class="required">*</b>Province:</label><br />
+                <select name="prov" id="prov"
+                onfocus="focusText(this);" onblur="blurText(this);">
+                    <option value="">Select a province</option>
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MN">Manitoba</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="NT">Northwest Territories</option>
+                    <option value="NU">Nunavut</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                    <option value="YT">Yukon</option>
+                </select>
+                <span class="info"></span><br /><br />
+      
+                <label for="pCode"><b class="required">*</b>Postal Code:</label><br />
+                <input type="text" name="pCode" id="pCode"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="country">Country:</label><br />
+                <input type="text" name="country" id="country"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+                
+                <label for="hPhone">Home Phone:</label><br />
+                <input type="text" name="hPhone" id="hPhone"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="bPhone"><b class="required">*</b>Business Phone:</label><br />
+                <input type="text" name="bPhone" id="bPhone"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <label for="email"><b class="required">*</b>Email Address:</label><br />
+                <input type="text" name="email" id="email"
+                onfocus="focusText(this);" onblur="blurText(this);"></input>
+                <span class="info"></span><br /><br />
+      
+                <input type="submit" name="submit" value="Register" onclick="return confirmchoice();" />
+                <input type="reset" name="reset" value="Reset" onclick="return confirm('Are you sure you want to reset?')"/>
+      
+            </form>
+          </div>
+        </div>
+          
+          <!-- Bottom site navigation links -->
+          <div id="bottomNav">
+            <div id="bottomNavImage">
+              <img src="..\media/register.jpg" height=40 alt="Register Icon" Title="Register" />
+              <img src="..\media/contact.jpg" height=40 alt="Contact Us Icon" Title="Contact Us" />
+            </div>
+            <div id="bottomNavLinks">
+              <a href="register.html">Register </a>|
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Footer with Copyright message -->
+          <div id="footer">
+            Copyright &copy; 2019 Travel Experts
+          </div>
+
+      </section>
+    </main>
+  </body>
+</html>
