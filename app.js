@@ -15,20 +15,35 @@ let server = app.listen(8001, () => {
       "Host Address: " + host + "\nPort: " + port);
 });
 
-app.use(express.static('views', { extensions: [ 'html', 'htm' ], index: 'home.html'}));
+app.use(express.static('views', { extensions: [ 'html', 'htm', 'ejs' ], index: 'home.html'}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let sqlCon = mysql.createPool({
+/*let sqlCon = mysql.createPool({
    connectionLimit: 10,
    host: 'localhost',
    user: 'root',
    password: 'password',
    database: 'travelexperts'
+});*/
+
+app.get('/vPackages_form', (req, res) => {
+   let sql = "SELECT `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, " +
+             "`PkgBasePrice` FROM `packages` ";
+
+   sqlCon.getConnection((err, connection) => {
+      if (err) throw err;
+      console.log('Connected!');
+
+      sqlCon.query(sql, (err, vPackages) => {
+         if(err) throw err;
+         let index = 0;
+         res.render('vPackages_form', { vPackages, images, index });
+         connection.release();
+      });
+   });
 });
-
-
 app.post("/vPackages_form", (req, res)=>{
 	data[0] = req.body.dateLeaving;
 	data[1] = req.body.dateReturning;
@@ -55,22 +70,7 @@ app.post("/vPackages_form", (req, res)=>{
 // Render with EJS
 // Images are place holder to render with each of the 4 vacation packages
 let images = ['Amsterdam.jpg', 'HotelView.jpg', 'Rialto.jpg', 'rome.jfif', 'Faraglioni.jpg'];
-app.get('/vPackages', (req, res) => {
-   let sql = "SELECT `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, " +
-             "`PkgBasePrice` FROM `packages` ";
 
-   sqlCon.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected!');
-
-      sqlCon.query(sql, (err, vPackages) => {
-         if(err) throw err;
-         let index = 0;
-         res.render('vPackages', { vPackages, images, index });
-         connection.release();
-      });
-   });
-});
 
 // Render with EJS
 app.get('/contact', (req, res) => {
