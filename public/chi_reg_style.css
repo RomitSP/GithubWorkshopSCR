@@ -2,7 +2,7 @@
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
   url('./media/vacation.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -106,13 +106,13 @@ padding: 0 !important;
 }
 
 .well {
-  margin-top: 5%;
+  margin-top: 90px;
 }
 legend {
   text-align: center;
   font-weight: bold;
   color: #eb5844;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .register{
   margin-top: 3%;

@@ -1,9 +1,10 @@
 * {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  
 }
 
 body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
   url('./media/vacation.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -109,6 +110,8 @@ padding: 0 !important;
 section {
   margin-left: 12%;
   margin-right: 12%;
+  color: #fff;
+  font-size: 18px;
 }
 header h1, #nav {
   text-align: center;
@@ -130,7 +133,7 @@ div.places {
   color: black;
 }
 #vacaSites {
-  padding-top: 2em;
+  padding-top: 90px;
   text-align: center;
 }
 #vacaSites img {
@@ -147,6 +150,8 @@ div.places {
   text-align: center;
   font-size: 1.2em;
   margin: 1em 0 1em 0;
+  color: #fa986b;
+  font-weight: 600;
 }
 #bottomNavLinks {
   color: black;
