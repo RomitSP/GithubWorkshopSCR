@@ -109,13 +109,13 @@
     margin: auto;
 }
 
-/* .img-thumbnail-agent {
-    border-radius: 50%;
+ .img-thumbnail-agent {
+    border-radius: 50% !important; 
     height: 7rem;
     width: 7rem;
     margin: 1rem;
 }
-
+/*
 .agent-card-list {
     margin-top: 2rem;
 } */
