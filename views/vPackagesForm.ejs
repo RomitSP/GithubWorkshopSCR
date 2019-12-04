@@ -70,13 +70,13 @@
 				</ul>
 	
 			</div>
-	</nav>
+		</nav>
 				<form class="form form-inline justify-content-center" method="post" action="/vPackages_form" autocomplete="off">
 					<div class="autocomplete">
-						<label for="dateLeaving">Date Leaving:</label>
+						<label for="dateLeaving" class="orange">Date Leaving:</label>
 						<input type="date" id="dateLeaving" name="dateLeaving" class="form-control " required="true" />
 						
-						<label for="dateReturning">Date Returning:</label>
+						<label for="dateReturning" class="orange">Date Returning:</label>
 						<input type="date" id="dateReturning" name="dateReturning" class="form-control " required="true" />
 						<input type="text" id="leavingFrom" name="leavingFrom" class="form-control " required="true"
 							placeholder="Leaving From" />
@@ -116,45 +116,48 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6" id="caribbeanCSS">
-				<h3><%= packages[0].PkgName %></h3>
-				<p class="black"> <%= packages[0].PkgDesc%></p>
-				<p>Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
-				<p>End Date: <%= packages[0].PkgEndDate.toDateString() %></p><br />
+			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="caribbeanCSS">
+				<h2><%= packages[0].PkgName %></h2>
+				<h5 class="black"> <%= packages[0].PkgDesc%></h5>
+				<p class="orange">Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
+				<p class="orange">End Date: <%= packages[0].PkgEndDate.toDateString() %></p><br />
 				<button class="btn btn-primary mb-2" onclick="caribbeanVideo()">See Video</button><br />
-				<h4 class="black">Package Base Price:</h4>
-				<h2 class="blue">$<%= packages[0].PkgBasePrice%></h2>
+				<h3 class="orange">Package Base Price:</h3>
+				<h2 class="orange">$<%= packages[0].PkgBasePrice%></h2>
 			</div>
-			<div class="col-sm-6" id="polyCSS">
-				<h3><%= packages[1].PkgName %></h3>
+			<br />
+			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="polyCSS">
+				<h2><%= packages[1].PkgName %></h2>
 				<h5 class="black"><%= packages[1].PkgDesc%></h5>
-				<p>Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
-				<p>End Date: <%= packages[1].PkgEndDate.toDateString() %></p><br />
+				<p class="orange">Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
+				<p class="orange">End Date: <%= packages[1].PkgEndDate.toDateString() %></p><br />
 				<button class="btn btn-primary mb-2" onclick="polyVideo()">See Video</button><br />
-				<h4>Package Base Price: </h4>
-				<h2 class="blue">$<%= packages[1].PkgBasePrice%></h2>
+				<h3 class="orange">Package Base Price: </h3>
+				<h2 class="orange">$<%= packages[1].PkgBasePrice%></h2>
 			</div>
 		</div>
+		<br />
 		<div class="row">
-			<div class="col-sm-6" id="asiaCSS">
-				<h3><%= packages[2].PkgName %></h3>
-				<p class="black"><%= packages[2].PkgDesc%></p>
-				<p>Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
-				<p>End Date: <%= packages[2].PkgEndDate.toDateString() %></p><br />
+			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="asiaCSS">
+				<h2><%= packages[2].PkgName %></h2>
+				<h5 class="black"><%= packages[2].PkgDesc%></h5>
+				<p class="orange">Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
+				<p class="orange">End Date: <%= packages[2].PkgEndDate.toDateString() %></p><br />
 				<button class="btn btn-primary mb-2" onclick="asiaVideo()">See Video</button><br />
-				<h4>Package Base Price: </h4>
-				<h2 class="blue">$<%= packages[2].PkgBasePrice%></h2>
+				<h3 class="orange"> Package Base Price: </h3>
+				<h2 class="orange">$<%= packages[2].PkgBasePrice%></h2>
 			</div>
+			<br />
 
-			<div class="col-sm-6" id="europeCSS">
+			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="europeCSS">
 
-				<h3><%= packages[3].PkgName %></h3>
+				<h2><%= packages[3].PkgName %></h2>
 				<h5 class="black"><%= packages[3].PkgDesc%></h5>
-				<p>Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
-				<p>End Date: <%= packages[3].PkgEndDate.toDateString() %></p><br />
+				<p class="orange">Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
+				<p class="orange">End Date: <%= packages[3].PkgEndDate.toDateString() %></p><br />
 				<button class="btn btn-primary mb-2" onclick="europeVideo()">See Video</button><br />
-				<h4>Package Base Price: </h4>
-				<h2 class="blue">$<%= packages[3].PkgBasePrice%></h2>
+				<h3 class="orange">Package Base Price: </h3>
+				<h2 class="orange">$<%= packages[3].PkgBasePrice%></h2>
 			</div>
 		</div>
 	</div>

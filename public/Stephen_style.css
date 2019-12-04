@@ -126,7 +126,6 @@ padding: 0 !important;
   height:30px;
   box-shadow: 10px 10px 10px;
 }
-
 .autocomplete {
   margin: 0 auto;
   width: 72%;
@@ -245,7 +244,7 @@ input[type=submit] {
 #footer {
   margin-top: 200px;
   color: black;
-  position: absolute;
+  position: relative;
   top: 120%;
   left: 45%;
 }
@@ -265,3 +264,9 @@ h2 {
   text-align: center;
   font-size: 185%;
 }
+
+.orange {
+  text-shadow: 2px 2px #eb5844;
+  color: white;
+}
+
