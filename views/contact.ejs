@@ -25,6 +25,7 @@
 
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/bc15b12e35.js" crossorigin="anonymous"></script>
+    <script src="romit_script.js"></script>
 </head>
 
 <body>
@@ -72,6 +73,10 @@
                 </div>
             </div>
         </div>
+        <script>
+            var faces = ['5', '2', '3']
+
+        </script>
         <div class="container d-flex justify-content-around agent-card-list">
             <div class="row">
                 <div class="col-md">
@@ -81,7 +86,7 @@
                             <div class="card bg-light mb-4" style="min-width: 40vw;">
                                 <div class="card-header"><%= agent.AgtPosition %></div>
                                 <div class="card-body">
-                                    <img src="Images/Faces/3.jpg" alt="Profile-Image"
+                                    <img src="media/Faces/3.jpg" alt="Profile-Image"
                                         class="img-thumbnail img-thumbnail-agent">
                                     <h5 class="card-title"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></h5>
                                     <p>Email: <a

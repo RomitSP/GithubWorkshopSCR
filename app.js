@@ -67,14 +67,15 @@ app.get('/chi_contact', (req, res) => {
 app.get('/contact', (req, res) => {
 
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
-      " `AgtPosition`, `AgencyId` FROM `agents`";
+      " `AgtPosition`, `AgencyId` FROM agents LIMIT 3";
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
       console.log('Connected!');
-
+      
       sqlCon.query(sql, (err, agents) => {
          if (err) throw err;
+         console.log(agents)
          res.render('contact', { agents });
          connection.release();
       });
