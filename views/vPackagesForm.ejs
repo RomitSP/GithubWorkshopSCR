@@ -5,10 +5,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Vacation Package</title>
 	<link rel="stylesheet" href="Stephen_style.css" />
-	<link href="css/bootstrap.min.css" rel="stylesheet" />
-	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+	
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
 	<script src="Stephen_packages_script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -22,42 +24,75 @@
 </head>
 
 <body>
-	<header>
-		<div class="banner">
-			<h1 id="welcome">Travel Experts</h1>
-			<h2 class="subtitle">Vacation Packages</h2>
-		</div>
-
-		<div id="nav">
-			<a href="home">Home </a> |
-			<a href="vPackagesForm">Packages </a> |
-			<a href="register">Register </a> |
-			<a href="contact">Contact Us </a> |
-			<a href="https://www.expedia.com/" target="_blank">Expedia </a> |
-			<a href="https://www.travelocity.com/" target="_blank">Travelocity </a> |
-			<a href="https://www.booking.com/" target="_blank">Bookings.com </a>
-		</div>
-	</header>
-
-	<form class="form-inline justify-content-center" method="post" action="/vPackages_form" class="form-inline"
-		class="form" autocomplete="off">
-		<div class="autocomplete">
-			<input type="date" id="dateLeaving" name="dateLeaving" class="form-control mb-2 mr-sm-2" required="true" />
-			<input type="date" id="dateReturning" name="dateReturning" class="form-control mb-2 mr-sm-2"
-				required="true" />
-			<input type="text" id="leavingFrom" name="leavingFrom" class="form-control mb-2 mr-sm-2" required="true"
-				placeholder="Leaving From" />
-			<select id="vacaPackage" name="vacaPackage" class="form-control mb-2 mr-sm-2" required="true"
-				placeholder="Choose Your Package" />
-			<option value="caribbean">Caribbean New Year</option>
-			<option value="polynesia">Polynesian Paradise</option>
-			<option value="asia">Asian Expedition</option>
-			<option value="europe">European Vacation</option>
-			</select>
-		</div>
-		<input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary mb-2"
-			value="Submit"></input>
-	</form>
+	<nav class="navbar navbar-default navbar-expand-lg navbar-light navbar-fixed-top">
+			<div class="navbar-header d-flex col">
+				<a class="navbar-brand" href="#">Travel<b>Experts</b></a>
+				<button type="button" data-target="#navbarCollapse" data-toggle="collapse"
+					class="navbar-toggle navbar-toggler ml-auto">
+					<span class="navbar-toggler-icon"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- Collection of nav links, forms, and other content for toggling -->
+			<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+				<ul class="nav navbar-nav">
+					<li class="nav-item"><a href="home" class="nav-link">Home</a></li>
+					<li class="nav-item active"><a href="vPackagesForm" class="nav-link">Vacation Packages</a></li>
+					<li class="nav-item dropdown">
+					<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Services <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#" class="dropdown-item">Hotel</a></li>
+						<li><a href="#" class="dropdown-item">Car Rentals</a></li>
+						<li><a href="#" class="dropdown-item">Cruise</a></li>
+						<li><a href="#" class="dropdown-item">Tours</a></li>
+						<li><a href="#" class="dropdown-item">Yacht/Boat Charters</a></li>
+						<li><a href="#" class="dropdown-item">Attractions</a></li>
+					</ul>
+					</li>
+					<li class="nav-item"><a href="register" class="nav-link">Login/Register</a></li>
+					<li class="nav-item"><a href="contact" class="nav-link">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right ml-auto">
+					<li class="navbar-form-wrapper">
+					<form class="navbar-form form-inline navbar-right">
+						<div class="input-group search-box">
+							<input type="text" id="search" class="form-control" placeholder="Search Here...">
+							<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+						</div>
+					</form>
+					</li>
+					<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-facebook"></i></a></li>
+					<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-twitter"></i></a></li>
+					<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-google-plus"></i></a></li>
+					<li class="nav-item"><a href="#" class="nav-link"><i class="fa fa-pinterest-p"></i></a></li>
+				</ul>
+	
+			</div>
+		</nav>
+				<form class="form form-inline justify-content-center" method="post" action="/vPackages_form" autocomplete="off">
+					<div class="autocomplete">
+						<label for="dateLeaving">Date Leaving:</label>
+						<input type="date" id="dateLeaving" name="dateLeaving" class="form-control " required="true" />
+						
+						<label for="dateReturning">Date Returning:</label>
+						<input type="date" id="dateReturning" name="dateReturning" class="form-control " required="true" />
+						<input type="text" id="leavingFrom" name="leavingFrom" class="form-control " required="true"
+							placeholder="Leaving From" />
+						<select id="vacaPackage" name="vacaPackage" class="form-control " required="true"
+							placeholder="Choose Your Package" />
+						<option value="caribbean">Caribbean New Year</option>
+						<option value="polynesia">Polynesian Paradise</option>
+						<option value="asia">Asian Expedition</option>
+						<option value="europe">European Vacation</option>
+						</select>
+						<input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn btn-primary mb-2"
+						value="Add Package"></input>
+					</div>
+					
+				</form>
+	
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
