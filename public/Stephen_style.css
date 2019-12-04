@@ -106,7 +106,7 @@ padding: 0 !important;
   text-align: center;
 }
 .form-inline {
-  margin: 40px 0 20px 60px;
+  margin: 80px 0 30px 0;
 }
 .form-elegant .font-small {
   font-size: 0.8rem; 
@@ -128,7 +128,7 @@ padding: 0 !important;
 }
 .autocomplete {
   margin: 0 auto;
-  width:70%;
+  width: 72%;
 }
 input {
   border: 1px solid ;

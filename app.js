@@ -82,15 +82,14 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
-   let data = [req.body.fname, req.body.lname, req.body.addr,
-   req.body.city, req.body.prov, req.body.pCode,
-   req.body.country, req.body.hPhone, req.body.bPhone,
-   req.body.email];
+   let data = [req.body.first_name, req.body.last_name, req.body.address,
+   req.body.city, req.body.province, req.body.pCode,
+   req.body.countrySelect, req.body.phone,req.body.email];
 
    let sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`," +
       " `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, " +
-      "`CustHomePhone`, `CustBusPhone`, `CustEmail`) VALUES" +
-      "(?,?,?,?,?,?,?,?,?,?);";
+      "`CustBusPhone`, `CustEmail`) VALUES" +
+      "(?,?,?,?,?,?,?,?,?);";
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
