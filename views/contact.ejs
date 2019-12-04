@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="Romit_contact_style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="contact-styles.css">
-    <link rel="stylesheet" href="Romit-styles.css">
-    <!-- <link rel="stylesheet" href="variables.css"> -->
-    <title>Travel Experts</title>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -23,9 +22,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/bc15b12e35.js" crossorigin="anonymous"></script>
-    <script src='script.js'></script>
 </head>
 
 <body>
@@ -39,15 +38,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="register.html">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="vPackagesForm">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="register.html">Register</a></li>
+                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -55,84 +49,54 @@
         <div class="card text-center card-outro justify-content-around container">
             <div class="row">
                 <div class="col-sm">
-                <div class="card-body justify-content-around">
-                    <!-- <div class="col justify-content-around map-container">
-                            <div class="mapouter justify-content-around iframe-rwd"><div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=sait&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/">norf vpn</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>     
-                        </div> -->
-                   
+                    <div class="card-body justify-content-around">
                         <div class="iframe-rwd">
                             <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0"
                                 marginwidth="0"
-                                src="https://maps.google.com/maps?q=sait&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe><br /><small><a
-                                    href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"
-                                    style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                                src="https://maps.google.com/maps?q=sait&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                            </iframe><br />
+                            <small><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"
+                                    style="color:#0000FF;text-align:left">View Larger Map</a>
+                            </small>
                         </div>
-                    </div>  
-                </div>   
-
-                    <div class="col-sm">
-                        <div class="card-body">
-                            <h5>Customer Care Contact: +1-780-555-0197</h5>
-                            <p>1301 16th Ave NW<br>
-                                Calgary, Alberta,<br> CANADA
-                                T2M 0L4</p>
-                        <p>
-                            Customer Care Email:
-                            <a href="mailto:travelexpertssupport@gmail.com?Subject=Hello%20again"
-                                target="_top">travelexpertssupport@gmail.com</a>
-                        </p>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card-body">
+                        <h5>Customer Care Contact: +1-780-555-0197</h5>
+                        <p>1301 16th Ave NW<br>Calgary, Alberta,<br>CANADA T2M 0L4</p>
+                        <p>Customer Care Email:
+                            <a href="mailto:travelexpertssupport@travelexperts.com?Subject=Hello%20again"
+                                target="_top">travelexpertssupport@gmail.com</a></p>
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="card">
-                    <div class="card-body">
-                      This is some text within a card body.
-                    </div>
-              </div> -->
         </div>
         <div class="container d-flex justify-content-around agent-card-list">
             <div class="row">
                 <div class="col-md">
                     <ul class="list-group">
                         <% agents.forEach(agent => { %>
-                            <li class="list-group-item">
-                                <div class="card bg-light mb-4" style="max-width: 90vw;">
-                                    <div class="card-header">Supervisor</div>
-                                    <div class="card-body">
-                                        <img src="Images/Faces/3.jpg" alt="Profile-Image"
-                                            class="img-thumbnail img-thumbnail-agent">
-                                        <h5 class="card-title"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></h5>
-                                        <p class="card-text">5 yrs of experience as a travel agent. 3 of which he worked
-                                            with
-                                            Travel
-                                            Experts. John has been an instrumental part of the success of Travel Experts.
-                                            He's always available to solve any issues and answer any questions in case our
-                                            team of
-                                            competent travel agents and customer service representatives have not been able
-                                            to
-                                            satisfy you.
-                                        </p>
-                                        <div class="card-text"><%= agent.AgtBusPhone %></div>
-                                    </div>
+                        <li class="list-group-item">
+                            <div class="card bg-light mb-4" style="min-width: 40vw;">
+                                <div class="card-header"><%= agent.AgtPosition %></div>
+                                <div class="card-body">
+                                    <img src="Images/Faces/3.jpg" alt="Profile-Image"
+                                        class="img-thumbnail img-thumbnail-agent">
+                                    <h5 class="card-title"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></h5>
+                                    <p>Email: <a
+                                            href="mailto:<%= agent.AgtEmail %>?Subject=Hello%20again"><%= agent.AgtEmail %></a>
+                                    </p>
+                                    <p>Business Phone: <%= agent.AgtBusPhone %></p>
                                 </div>
-                            </li>
+                            </div>
+                        </li>
                         <% }); %>
-                        
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- <iframe
-    width="600"
-    height="450"
-    frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBHEe224BrjMY8KMNiDBDLOyBbETkjvHaE
-      &q=Space+Needle,Seattle+WA" allowfullscreen>
-  </iframe> -->
-
 </body>
 
 </html>
