@@ -6,7 +6,7 @@
   padding:15px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color:rgb(184, 184, 184);
   margin-top: 20px;
 }
 .site-footer hr
@@ -28,11 +28,11 @@
 }
 .site-footer a
 {
-  color:#737373;
+  color:#eb5844;
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:#f08373;
   text-decoration:none;
 }
 .footer-links
@@ -46,11 +46,11 @@
 }
 .footer-links a
 {
-  color:#737373
+  color:rgb(184, 184, 184);
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#f08373;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -108,13 +108,13 @@
 {
   margin-right:15px;
   text-transform:uppercase;
-  color:#96a2b2;
+  color:rgb(184, 184, 184);
   font-weight:700;
   font-size:13px
 }
 .social-icons a{
   background-color:#eceeef;
-  color:#818a91;
+  color:rgb(184, 184, 184);
   font-size:16px;
   display:inline-block;
   line-height:44px;

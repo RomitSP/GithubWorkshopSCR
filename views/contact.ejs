@@ -108,31 +108,31 @@
                     <div class="card-div">
                         <a class="card-bg card-block"></a>
                         <div>
-                        <img src="media/Faces/3.jpg" alt="agent" class="card-avatarImg">
-                        <div class="card-divUser">
-                            <div class="card-divName">
-                                <%= agent.AgtFirstName %> <%= agent.AgtLastName %>
+                            <img src="media/Faces/3.jpg" alt="agent" class="card-avatarImg">
+                            <div class="card-divUser">
+                                <div class="card-divName">
+                                    <%= agent.AgtFirstName %> <%= agent.AgtLastName %>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-divStats">
-                            <ul class="card-Arrange">
-                                <li class="card-ArrangeSizeFit">
-                                    <span class="card-StatLabel card-block">Position</span>
-                                    <span class="card-StatValue"><%= agent.AgtPosition %></span>
-                                </li>
-                                <li class="card-ArrangeSizeFit">
-                                    <span class="card-StatLabel card-block">Business Number</span>
-                                    <span class="card-StatValue"><%= agent.AgtBusPhone %></span>
-                                </li>
-                                <li class="card-ArrangeSizeFit">
-                                    <span class="card-StatLabel card-block">Email</span>
-                                    <span class="card-StatValue"><a href="mailto:
-                                        <%= agent.AgtEmail %>?Subject=Hello%20again">
-                                        <%= agent.AgtEmail %></a>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
+                            <div class="card-divStats">
+                                <ul class="card-Arrange">
+                                    <li class="card-ArrangeSizeFit">
+                                        <span class="card-StatLabel card-block">Position</span>
+                                        <span class="card-StatValue"><%= agent.AgtPosition %></span>
+                                    </li>
+                                    <li class="card-ArrangeSizeFit">
+                                        <span class="card-StatLabel card-block">Business Number</span>
+                                        <span class="card-StatValue"><%= agent.AgtBusPhone %></span>
+                                    </li>
+                                    <li class="card-ArrangeSizeFit">
+                                        <span class="card-StatLabel card-block">Email</span>
+                                        <span class="card-StatValue"><a href="mailto:
+                                            <%= agent.AgtEmail %>?Subject=Hello%20again">
+                                            <%= agent.AgtEmail %></a>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
