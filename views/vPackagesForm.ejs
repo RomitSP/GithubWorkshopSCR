@@ -24,6 +24,8 @@
 </head>
 
 <body>
+	        <!--Nav Bar made by Chi -->
+
 	<nav class="navbar navbar-default navbar-expand-lg navbar-light navbar-fixed-top">
 			<div class="navbar-header d-flex col">
 				<a class="navbar-brand" href="#">Travel<b>Experts</b></a>
@@ -71,6 +73,8 @@
 	
 			</div>
 		</nav>
+		        <!-- Rest of page made by Stephen. Chi helped with importing data from server for package fields -->
+
 				<form class="form form-inline justify-content-center" method="post" action="/vPackages_form" autocomplete="off">
 					<div class="autocomplete">
 						<label for="dateLeaving" class="orange">Date Leaving:</label>
@@ -87,51 +91,31 @@
 						<option value="asia">Asian Expedition</option>
 						<option value="europe">European Vacation</option>
 						</select>
-						<input data-toggle="modal" data-target="#exampleModal" type="submit" class="btn"
+						<input onclick="thanksAlert()" type="submit" class="btn btn-danger"
 						value="Add Package"></input>
 					</div>
 					
 				</form>
-	
 
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Congrats! You are on your way to paradise!</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Start Your Journey!</button>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<div class="container">
 		<div class="row">
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="caribbeanCSS">
-				<h2><%= packages[0].PkgName %></h2>
-				<h5 class="black"> <%= packages[0].PkgDesc%></h5>
+				<h1 class="blackshadow"><%= packages[0].PkgName %></h1>
+				<h4 class="blue"> <%= packages[0].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[0].PkgEndDate.toDateString() %></p><br />
-				<button class="btn btn-primary mb-2" onclick="caribbeanVideo()">See Video</button><br />
+				<button class="btn btn-danger" onclick="caribbeanVideo()">See Video</button><br />
 				<h3 class="orange">Package Base Price:</h3>
 				<h2 class="orange">$<%= packages[0].PkgBasePrice%></h2>
 			</div>
 			<br />
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="polyCSS">
-				<h2><%= packages[1].PkgName %></h2>
-				<h5 class="black"><%= packages[1].PkgDesc%></h5>
+				<h2 class="blackshadow"><%= packages[1].PkgName %></h2>
+				<h4 class="blue"><%= packages[1].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[1].PkgEndDate.toDateString() %></p><br />
-				<button class="btn btn-primary mb-2" onclick="polyVideo()">See Video</button><br />
+				<button class="btn btn-danger" onclick="polyVideo()">See Video</button><br />
 				<h3 class="orange">Package Base Price: </h3>
 				<h2 class="orange">$<%= packages[1].PkgBasePrice%></h2>
 			</div>
@@ -139,11 +123,11 @@
 		<br />
 		<div class="row">
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="asiaCSS">
-				<h2><%= packages[2].PkgName %></h2>
-				<h5 class="black"><%= packages[2].PkgDesc%></h5>
+				<h2 class="blackshadow"><%= packages[2].PkgName %></h2>
+				<h4 class="blue"><%= packages[2].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[2].PkgEndDate.toDateString() %></p><br />
-				<button class="btn btn-primary mb-2" onclick="asiaVideo()">See Video</button><br />
+				<button class="btn btn-danger" onclick="asiaVideo()">See Video</button><br />
 				<h3 class="orange"> Package Base Price: </h3>
 				<h2 class="orange">$<%= packages[2].PkgBasePrice%></h2>
 			</div>
@@ -151,11 +135,11 @@
 
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="europeCSS">
 
-				<h2><%= packages[3].PkgName %></h2>
-				<h5 class="black"><%= packages[3].PkgDesc%></h5>
+				<h2 class="blackshadow"><%= packages[3].PkgName %></h2>
+				<h4 class="blue"><%= packages[3].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[3].PkgEndDate.toDateString() %></p><br />
-				<button class="btn btn-primary mb-2" onclick="europeVideo()">See Video</button><br />
+				<button class="btn btn-danger" onclick="europeVideo()">See Video</button><br />
 				<h3 class="orange">Package Base Price: </h3>
 				<h2 class="orange">$<%= packages[3].PkgBasePrice%></h2>
 			</div>

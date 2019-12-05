@@ -1,3 +1,4 @@
+/*All code made by Chi except post method*/
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -104,6 +105,8 @@ app.post('/register', (req, res) => {
    res.redirect('thanks');
 });
 
+/*Post method started by Stephen but finished with Chi's help*/
+
 app.post("/vPackages_form", (req, res) => {
    let data = [req.body.dateLeaving, req.body.dateReturning, req.body.leavingFrom, req.body.vacaPackage];
 
@@ -119,7 +122,7 @@ app.post("/vPackages_form", (req, res) => {
       });
    });
 
-   res.redirect('thanks');
+  
 });
 
 
