@@ -167,3 +167,7 @@ h2 {
   color: white;
 }
 
+.blackshadow {
+  text-shadow: 2px 2px black;
+
+}
