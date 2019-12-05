@@ -10,13 +10,6 @@ const session = require('express-session');
 const methodOverride = require('method-override');
 const initializePassport = require('./passport-config');
 
-let users = [];
-initializePassport(
-   passport, 
-   email => users.find(user => user.email === email ),
-   id => users.find(user => user.id === id)
-);
-
 // Use methods
 app.use(express.static('views', { extensions: ['html', 'htm'], index: 'home.html' }));
 app.use(express.static('public'));
@@ -41,6 +34,30 @@ let sqlCon = mysql.createPool({
    database: 'travelexperts'
 });
 
+let emailSql = "SELECT `CustEmail` FROM `customers`";
+let emails = [];
+sqlCon.getConnection((err, connection) => {
+   if (err) throw err;
+   console.log('Connected!');
+
+   sqlCon.query(emailSql, (err, result) => {
+      if (err) throw err;
+      result.forEach(item => {
+         // Remove space, line breas, and carriage return from data
+         let removeFormat = item.CustEmail.replace(/(\s|\r\n|\n|\r)/gm, "");
+         emails.push(removeFormat);
+      });
+      
+      connection.release();
+   });
+});
+
+
+initializePassport(
+   passport, 
+   email => users.find(user => user.email === email )
+);
+
 app.get('/login', checkNotAuthenticated, (req, res) => {
    res.render('login');
 })
@@ -56,7 +73,7 @@ let images = ['Amsterdam.jpg', 'HotelView.jpg', 'Rialto.jpg', 'rome.jfif', 'Fara
 app.get('/vPackagesForm', (req, res) => {
    let sql = "SELECT `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, " +
       "`PkgBasePrice` FROM `packages` ";
-
+   
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
       console.log('Connected!');
