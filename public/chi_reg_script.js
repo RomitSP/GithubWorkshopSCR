@@ -1,5 +1,10 @@
+
+
+
 $(document).ready(function () {
-  $('#contact_form').bootstrapValidator({
+
+    // http://bootstrapvalidator.votintsev.ru/settings/ for more info check this out.    
+  $('#myForm').bootstrapValidator({
       // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
       feedbackIcons: {
           valid: 'glyphicon glyphicon-ok',
@@ -34,6 +39,17 @@ $(document).ready(function () {
                   },
                   emailAddress: {
                       message: 'Email address is not valid'
+                  }
+              }
+          },
+          password: {
+            validators: {
+                  notEmpty: {
+                      message: 'The password is required and cannot be empty'
+                  },
+                  stringLength: {
+                      min: 8,
+                      message: 'The password must have at least 8 characters'
                   }
               }
           },
@@ -96,22 +112,10 @@ $(document).ready(function () {
                   }
               }
           },
-          comment: {
-              validators: {
-                  stringLength: {
-                      min: 10,
-                      max: 200,
-                      message: 'Please enter at least 10 characters and no more than 200'
-                  },
-                  notEmpty: {
-                      message: 'Please supply a description of your project'
-                  }
-              }
-          }
       }
   }).on('success.form.bv', function (e) {
         $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-        $('#contact_form').data('bootstrapValidator').resetForm();
+        $('#myForm').data('bootstrapValidator').resetForm();
 
         // Prevent form submission
         e.preventDefault();
@@ -121,6 +125,15 @@ $(document).ready(function () {
 
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
+
+        // Use Ajax to submit form data
+        $.post($form.attr('action'), $form.serialize(), function (result) {
+            console.log(result);
+        }, 'json');
+        
+        setTimeout(() => {
+            window.location.replace("/login");
+        }, 5000);
     });
 });
 

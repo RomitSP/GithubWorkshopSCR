@@ -3,20 +3,35 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const ejs = require('ejs');
+const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
+const methodOverride = require('method-override');
+const initializePassport = require('./passport-config');
 
-let server = app.listen(8001, () => {
-   const host = server.address().address;
-   const port = server.address().port;
+let users = [];
+initializePassport(
+   passport, 
+   email => users.find(user => user.email === email ),
+   id => users.find(user => user.id === id)
+);
 
-   console.log("Server is listening on port 8000. Ready to accept requests\n" +
-      "Host Address: " + host + "\nPort: " + port);
-});
-
+// Use methods
 app.use(express.static('views', { extensions: ['html', 'htm'], index: 'home.html' }));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(flash());
+app.use(session({
+   secret: 'secret',
+   resave: false,
+   saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride('_method'));
+
 
 let sqlCon = mysql.createPool({
    connectionLimit: 10,
@@ -26,7 +41,16 @@ let sqlCon = mysql.createPool({
    database: 'travelexperts'
 });
 
-// Render with EJS
+app.get('/login', checkNotAuthenticated, (req, res) => {
+   res.render('login');
+})
+
+app.post('/login', passport.authenticate('local', {
+   successRedirect: '/',
+   failureRedirect: '/login',
+   failureFlash: true
+}));
+
 // Images are place holder to render with each of the 4 vacation packages
 let images = ['Amsterdam.jpg', 'HotelView.jpg', 'Rialto.jpg', 'rome.jfif', 'Faraglioni.jpg'];
 app.get('/vPackagesForm', (req, res) => {
@@ -46,25 +70,8 @@ app.get('/vPackagesForm', (req, res) => {
    });
 });
 
-// Render with EJS
-app.get('/chi_contact', (req, res) => {
 
-   let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
-      " `AgtPosition`, `AgencyId` FROM `agents`";
-
-   sqlCon.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected!');
-
-      sqlCon.query(sql, (err, agents) => {
-         if (err) throw err;
-         res.render('chi_contact', { agents });
-         connection.release();
-      });
-   });
-});
-
-// Render with EJS
+// Dynamic generation of 'agents' from DB.
 app.get('/contact', (req, res) => {
 
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
@@ -72,7 +79,6 @@ app.get('/contact', (req, res) => {
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
-      console.log('Connected!');
 
       sqlCon.query(sql, (err, agents) => {
          if (err) throw err;
@@ -82,27 +88,41 @@ app.get('/contact', (req, res) => {
    });
 });
 
-app.post('/register', (req, res) => {
-   let data = [req.body.first_name, req.body.last_name, req.body.address,
-   req.body.city, req.body.province, req.body.pCode,
-   req.body.countrySelect, req.body.phone,req.body.email];
 
-   let sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`," +
-      " `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, " +
-      "`CustBusPhone`, `CustEmail`) VALUES" +
-      "(?,?,?,?,?,?,?,?,?);";
+app.post('/register', async (req, res) => {
 
-   sqlCon.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected!');
+   try {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      // users.push({
+      //    id: Date.now().toString(),
+      //    name: req.body.first_name,
+      //    email: req.body.email,
+      //    password: hashedPassword
+      // });
 
-      sqlCon.query(sql, data, (err, result, fields) => {
+      // res.redirect('/login')
+
+      let data = [req.body.first_name, req.body.last_name, req.body.address,
+         req.body.city, req.body.province, req.body.pCode,
+         req.body.countrySelect, req.body.phone, req.body.email, hashedPassword];
+      
+      let sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`," +
+         " `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, " +
+         "`CustBusPhone`, `CustEmail`, `password`) VALUES" +
+         "(?,?,?,?,?,?,?,?,?,?);";
+   
+      sqlCon.getConnection((err, connection) => {
          if (err) throw err;
-         connection.release();
+         console.log('Connected!');
+   
+         sqlCon.query(sql, data, (err, result, fields) => {
+            if (err) throw err;
+            connection.release();
+         });
       });
-   });
-
-   res.redirect('thanks');
+   } catch {
+      res.redirect('register');
+   }
 });
 
 /*Post method started by Stephen but finished with Chi's help*/
@@ -118,6 +138,7 @@ app.post("/vPackages_form", (req, res) => {
          + "VALUES (?,?,?,?)";
       sqlCon.query(sql, data, (err, result, fields) => {
          if (err) throw err;
+         console.log(result);
          connection.release();
       });
    });
@@ -125,7 +146,37 @@ app.post("/vPackages_form", (req, res) => {
   
 });
 
+// Passport method that auto clear session and log you out.
+// Requires method-override package
+app.delete('/logout', (req, res) => {
+   req.logOut()
+   res.redirect('login')
+});
 
+// Use to protect pages that un-authenticated should not access (i.e. Profile, User's Setting, etc)
+function checkAuthenticated (req, res, next) {
+   if(req.isAuthenticated()) {
+      return next();
+   }
+   res.redirect('login');
+}
+
+// Use to protect pages that authenticated should not access (i.e. login page)
+function checkNotAuthenticated (req, res, next) {
+   if (req.isAuthenticated()) {
+      return res.redirect('/');
+   }
+
+   next();
+}
 app.use((req, res, next) => {
-   res.status(404).sendFile(__dirname + "/views/404.html");
+   res.status(404).redirect('404');
+});
+
+let server = app.listen(8001, () => {
+   const host = server.address().address;
+   const port = server.address().port;
+
+   console.log("Server is listening on port 8000. Ready to accept requests\n" +
+      "Host Address: " + host + "\nPort: " + port);
 });
