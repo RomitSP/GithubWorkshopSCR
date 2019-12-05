@@ -70,6 +70,22 @@ app.post('/login', passport.authenticate('local', {
    failureFlash: true
 }));
 
+app.get('/rcontact', (req, res) => {
+   let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
+      " `AgtPosition`, `AgencyId` FROM `agents` LIMIT 3";
+
+   sqlCon.getConnection((err, connection) => {
+      if (err) throw err;
+
+      sqlCon.query(sql, (err, agents) => {
+         console.log(agents);
+         if (err) throw err;
+         res.render('rcontact', { agents });
+         connection.release();
+      });
+   });
+})
+
 // Images are place holder to render with each of the 4 vacation packages
 let images = ['Amsterdam.jpg', 'HotelView.jpg', 'Rialto.jpg', 'rome.jfif', 'Faraglioni.jpg'];
 app.get('/vPackagesForm', (req, res) => {
@@ -94,7 +110,7 @@ app.get('/vPackagesForm', (req, res) => {
 app.get('/contact', (req, res) => {
 
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
-      " `AgtPosition`, `AgencyId` FROM `agents`";
+      " `AgtPosition`, `AgencyId` FROM `agents` LIMIT 3";
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
@@ -107,19 +123,10 @@ app.get('/contact', (req, res) => {
    });
 });
 
-
 app.post('/register', async (req, res) => {
 
    try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
-      // users.push({
-      //    id: Date.now().toString(),
-      //    name: req.body.first_name,
-      //    email: req.body.email,
-      //    password: hashedPassword
-      // });
-
-      // res.redirect('/login')
 
       let data = [req.body.first_name, req.body.last_name, req.body.address,
          req.body.city, req.body.province, req.body.pCode,
@@ -191,6 +198,7 @@ function checkNotAuthenticated (req, res, next) {
 app.use((req, res, next) => {
    res.status(404).redirect('404');
 });
+
 
 let server = app.listen(8001, () => {
    const host = server.address().address;
