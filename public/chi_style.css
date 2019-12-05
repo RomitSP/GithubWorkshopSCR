@@ -1,110 +1,3 @@
-* {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  
-}
-
-body{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-  url('./media/vacation.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left;
-  background-attachment: fixed;
-  padding-top: 110px;
-}
-.form-inline {
-  display: inline-block;
-}
-.navbar-header.col {
-padding: 0 !important;
-}	
-.navbar {		
-  background: #fff;
-  padding: 15px 20px 15px 40px;
-  border-bottom: 1px solid #d6d6d6;
-  box-shadow: 0 0 4px rgba(0,0,0,.1);
-}
-.nav-link img {
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  margin: -8px 0;
-  float: left;
-  margin-right: 10px;
-}
-.navbar .navbar-brand {
-  color: #555;
-  padding-left: 0;
-  font-size: 30px;
-  padding-right: 25px;
-}
-.navbar .navbar-brand b {
-  font-weight: bold;
-  color: #eb5844;
-}
-.navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
-  color: #f08373 !important;
-}
-.navbar ul.nav li.active a, .navbar ul.nav li.active a:hover, .navbar ul.nav li.active a:focus {
-  color: #eb5844 !important;
-  background: transparent !important;
-  border: 1px solid #eb5844;
-}
-.search-box {
-  position: relative;
-}	
-.search-box input.form-control {		
-  padding-right: 140px;
-  border-radius: 0;
-  padding-left: 0;
-  border-width: 0 0 1px 0;
-  box-shadow: none;
-}
-.search-box input.form-control:focus {		
-  border-color: #f08373;		
-}
-.search-box .input-group-addon {
-  min-width: 35px;
-  border: none;
-  background: transparent;
-  position: absolute;
-  right: 0;
-  z-index: 9;
-  padding: 7px 0 7px 7px;
-  height: 100%;
-}
-.navbar .nav-item a {
-  font-size: 16px;
-}
-.search-box i {
-  color: #a0a5b1;
-  font-size: 25px;
-}
-.navbar .nav-item i {
-  font-size: 18px;
-}
-.navbar .dropdown-item i {
-  font-size: 16px;
-  min-width: 22px;
-}
-.navbar .nav-item.open > a {
-  background: none !important;
-}
-.navbar .dropdown-menu {
-  border-radius: 1px;
-  border-color: #e5e5e5;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
-}
-.navbar .dropdown-menu li a {
-  color: #777;
-  padding: 8px 20px;
-  line-height: normal;
-}
-.navbar .navbar-form {
-  margin-right: 0;
-  margin-left: 0;
-  border: 0;
-}
 
 
 section {
@@ -133,7 +26,7 @@ div.places {
   color: black;
 }
 #vacaSites {
-  padding-top: 90px;
+  padding-top: 50px;
   text-align: center;
 }
 #vacaSites img {
@@ -156,7 +49,4 @@ div.places {
 #bottomNavLinks {
   color: black;
 }
-#footer {
-  margin-top: 200px;
-  color: black;
-}
+
