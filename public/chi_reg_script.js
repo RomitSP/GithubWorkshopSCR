@@ -1,4 +1,9 @@
+
+
+
 $(document).ready(function () {
+
+    // http://bootstrapvalidator.votintsev.ru/settings/ for more info check this out.    
   $('#myForm').bootstrapValidator({
       // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
       feedbackIcons: {
@@ -120,6 +125,15 @@ $(document).ready(function () {
 
         // Get the BootstrapValidator instance
         var bv = $form.data('bootstrapValidator');
+
+        // Use Ajax to submit form data
+        $.post($form.attr('action'), $form.serialize(), function (result) {
+            console.log(result);
+        }, 'json');
+        
+        setTimeout(() => {
+            window.location.replace("/login");
+        }, 5000);
     });
 });
 
