@@ -37,6 +37,17 @@ $(document).ready(function () {
                   }
               }
           },
+          password: {
+            validators: {
+                  notEmpty: {
+                      message: 'The password is required and cannot be empty'
+                  },
+                  stringLength: {
+                      min: 8,
+                      message: 'The password must have at least 8 characters'
+                  }
+              }
+          },
           phone: {
               validators: {
                   notEmpty: {
@@ -96,22 +107,10 @@ $(document).ready(function () {
                   }
               }
           },
-          comment: {
-              validators: {
-                  stringLength: {
-                      min: 10,
-                      max: 200,
-                      message: 'Please enter at least 10 characters and no more than 200'
-                  },
-                  notEmpty: {
-                      message: 'Please supply a description of your project'
-                  }
-              }
-          }
       }
   }).on('success.form.bv', function (e) {
         $('#success_message').slideDown({ opacity: "show" }, "slow") // Do something ...
-        $('#contact_form').data('bootstrapValidator').resetForm();
+        $('#myForm').data('bootstrapValidator').resetForm();
 
         // Prevent form submission
         e.preventDefault();

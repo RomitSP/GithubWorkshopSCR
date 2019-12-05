@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const ejs = require('ejs');
+const bcrypt = require('bcrypt');
 
 let server = app.listen(8001, () => {
    const host = server.address().address;
@@ -45,23 +45,6 @@ app.get('/vPackagesForm', (req, res) => {
    });
 });
 
-// Render with EJS
-app.get('/chi_contact', (req, res) => {
-
-   let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
-      " `AgtPosition`, `AgencyId` FROM `agents`";
-
-   sqlCon.getConnection((err, connection) => {
-      if (err) throw err;
-      console.log('Connected!');
-
-      sqlCon.query(sql, (err, agents) => {
-         if (err) throw err;
-         res.render('chi_contact', { agents });
-         connection.release();
-      });
-   });
-});
 
 // Render with EJS
 app.get('/contact', (req, res) => {
@@ -71,7 +54,6 @@ app.get('/contact', (req, res) => {
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
-      console.log('Connected!');
 
       sqlCon.query(sql, (err, agents) => {
          if (err) throw err;
@@ -82,14 +64,15 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/register', (req, res) => {
+   console.log("post");
    let data = [req.body.first_name, req.body.last_name, req.body.address,
    req.body.city, req.body.province, req.body.pCode,
-   req.body.countrySelect, req.body.phone,req.body.email];
+   req.body.countrySelect, req.body.phone, req.body.email, req.body.password];
 
    let sql = "INSERT INTO `customers`(`CustFirstName`, `CustLastName`," +
       " `CustAddress`, `CustCity`, `CustProv`, `CustPostal`, `CustCountry`, " +
-      "`CustBusPhone`, `CustEmail`) VALUES" +
-      "(?,?,?,?,?,?,?,?,?);";
+      "`CustBusPhone`, `CustEmail`, `password`) VALUES" +
+      "(?,?,?,?,?,?,?,?,?,?);";
 
    sqlCon.getConnection((err, connection) => {
       if (err) throw err;
@@ -97,6 +80,7 @@ app.post('/register', (req, res) => {
 
       sqlCon.query(sql, data, (err, result, fields) => {
          if (err) throw err;
+         console.log(result);
          connection.release();
       });
    });
@@ -115,6 +99,7 @@ app.post("/vPackages_form", (req, res) => {
          + "VALUES (?,?,?,?)";
       sqlCon.query(sql, data, (err, result, fields) => {
          if (err) throw err;
+         console.log(result);
          connection.release();
       });
    });

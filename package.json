@@ -14,8 +14,10 @@
     "nodemon": "^2.0.0"
   },
   "dependencies": {
+    "bcrypt": "^3.0.7",
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
+    "express-ejs-layouts": "^2.5.0",
     "mysql": "^2.17.1"
   }
 }
