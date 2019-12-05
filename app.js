@@ -34,18 +34,18 @@ let sqlCon = mysql.createPool({
    database: 'travelexperts'
 });
 
-let emailSql = "SELECT `CustEmail` FROM `customers`";
-let emails = [];
+let emailUserNameSql = "SELECT `CustEmail` FROM `customers`";
+let emailUserName = [];
 sqlCon.getConnection((err, connection) => {
    if (err) throw err;
    console.log('Connected!');
 
-   sqlCon.query(emailSql, (err, result) => {
+   sqlCon.query(emailUserNameSql, (err, result) => {
       if (err) throw err;
       result.forEach(item => {
          // Remove space, line breas, and carriage return from data
          let removeFormat = item.CustEmail.replace(/(\s|\r\n|\n|\r)/gm, "");
-         emails.push(removeFormat);
+         emailUserName.push(removeFormat);
       });
       
       connection.release();
@@ -55,7 +55,9 @@ sqlCon.getConnection((err, connection) => {
 
 initializePassport(
    passport, 
-   email => users.find(user => user.email === email )
+   /* This function returns a username/email if it is in the list of 
+    user emails in db (emailUserName) */
+   email => emailUsername.find(username => username === email )
 );
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
