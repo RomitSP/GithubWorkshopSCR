@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
-const bcrypt = require('bcrypt');
 
 let server = app.listen(8001, () => {
    const host = server.address().address;
