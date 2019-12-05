@@ -214,8 +214,8 @@ text-shadow: 2px 2px black;
 
 #collage{
 top: 50%;
-right:  50%;
-left:  50%;
+right:  10%;
+left:  90%;
 bottom:  50%;
 padding-right: 10px;
 }
@@ -268,7 +268,7 @@ padding-right: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-shadow: 1px 1px white;
   }
-  
+
 #footer {
   margin-top: 200px;
   color: black;
