@@ -167,6 +167,7 @@ app.post("/vPackages_form", (req, res) => {
          console.log(result);
          connection.release();
       });
+      res.redirect('thanks')
    });
 
   
