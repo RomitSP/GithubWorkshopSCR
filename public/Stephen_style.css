@@ -15,11 +15,12 @@
   -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
   box-shadow: 0 5px  1px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); 
 }
+
+/*The rest made by Stephen - Autocomplete pulled from w3 schools */
+
 .button {
-  background-color: #eb5844;
-  color: #fff;
-  width:100px;
-  height:30px;
+  --button-color: black;
+  --button-background-color: silver;
   box-shadow: 10px 10px 10px;
 }
 .autocomplete {
@@ -41,7 +42,6 @@ input[type=submit] {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
   right: 0;
@@ -51,10 +51,10 @@ input[type=submit] {
   cursor: pointer;
   background-color:#fff;
   border-bottom: 1px solid #d4d4d4;
-  color: #eb5844;
+  color: black;
 }
 .autocomplete-items div:hover {
-  background-color: #e9e9e9;
+  background-color:  #cccccc;
 }
 
 .autocomplete-active {
@@ -67,22 +67,53 @@ input[type=submit] {
   height: 100px;
   vertical-align: middle;
 }
-#nav {
-  background-color: lightblue;
-  padding: 5px;
+.blue {
+  color:blue;
+  font-weight:bold;
+}
+.black {
+  color:black;
+  font-weight:bold
+}
+h1 {
   text-align: center;
+  font-size: 265%;
 }
-#nav a:link, #bottomNavLinks a:link {
-  color:darkblue;
+h2 {
+  text-align: center;
+  font-size: 185%;
 }
-#nav a:hover, #bottomNavLinks a:hover {
-  color:#ffffff;
-  cursor: pointer;
+
+.orange {
+  text-shadow: 2px 1px #eb5844;
+  color: white;
 }
-#nav a:active {
-  color:#f0f0f0;
-  background-color:#00ff00;
+
+.blue {
+  text-shadow: 1px 1px dodgerblue;
+  color: white;
+
 }
+.blackshadow{
+text-shadow: 2px 2px black;
+}
+
+.thankyou {
+text-align: center;
+font-size: 200%;
+margin-top: 0%;
+color: white;
+text-shadow: 2px 2px black;
+}
+
+#collage{
+top: 50%;
+right:  10%;
+left:  90%;
+bottom:  50%;
+padding-right: 10px;
+}
+
 #caribbeanCSS {
   border-style: ridge;
   background: white;
@@ -131,38 +162,12 @@ input[type=submit] {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-shadow: 1px 1px white;
   }
-#bottomNav {
-  color: black;
-  position: absolute; 
-  right: 45%;
-  top: 97%;
-  }
+
 #footer {
   margin-top: 200px;
   color: black;
   position: relative;
   top: 120%;
   left: 45%;
-}
-.blue {
-  color:blue;
-  font-weight:bold;
-}
-.black {
-  color:black;
-  font-weight:bold
-}
-h1 {
-  text-align: center;
-  font-size: 265%;
-}
-h2 {
-  text-align: center;
-  font-size: 185%;
-}
-
-.orange {
-  text-shadow: 2px 2px #eb5844;
-  color: white;
 }
 

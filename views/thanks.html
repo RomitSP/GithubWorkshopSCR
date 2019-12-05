@@ -5,11 +5,11 @@
     <Title>
       Travel Experts
     </Title>
-    <link href="chi_style.css" rel="stylesheet" />
+    <link href="Stephen_style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
 
-        // Redirect users to back to home page after a few seconds
+        // Redirect users to back to home page after a few seconds - this function made by Chi
         $(document).ready(function() {
             setTimeout(() => {
                 window.location.replace("home");
@@ -17,51 +17,26 @@
         });
     </script>
   </head>
-  
-  <body>
-    <!-- Fixed Welcome banner with site links -->
-    <header>
-      <div class="banner">
-        <h1 id="welcome">
-          Welcome to Travel Experts
-        </h1>
-      </div>
-      <div id="nav">
-        <a href="home">Home </a> |
-        <a href="vPackages">Packages </a> |
-        <a href="register">Register </a> |
-        <a href="contact">Contact Us </a> |
-        <a href="https://www.expedia.com/" target="_blank">Expedia </a> |
-        <a href="https://www.travelocity.com/" target="_blank">Travelocity </a> |
-        <a href="https://www.booking.com/" target="_blank">Bookings.com </a>
-      </div>
-    </header>
-    <main>
-      <section>
-        <h1>Thank you for registering!</h1>
-        <p>You will be redirected to the home page shortly.</p>
-        <p><a href="home">Or you can click here to go back to our home page</a></p>
+         <!-- the following code made by Stephen -->
 
-        <img src="./media/thankyou.jpg" alt="Thank You" title="Thank You!">
+  <body> 
+    <div class="thankyou">
+    <h1>Thank You For Registering!</h1>
+        <h3>You will be redirected to the home page shortly.</h2>
+        <h3><a href="home">Or you can click here to go back to our home page</a></h3>
+      </div>
 
-        <!-- Bottom site navigation links -->
-        <div id="bottomNav">
-          <div id="bottomNavImage">
-            <img src="..\media/register.jpg" height=40 alt="Register Icon" Title="Register" />
-            <img src="..\media/contact.jpg" height=40 alt="Contact Us Icon" Title="Contact Us" />
-          </div>
-          <div id="bottomNavLinks">
-            <a href="register.html">Register </a>|
-            <a href="contact.html">Contact Us</a>
-          </div>
-        </div>
+          
+      
+      <!-- could not get the picture to respond to css, had to resort to what you see below this line to get the image to move -->
+      &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp<img id="collage" src="./media/collage.png" alt="Thank You" id="collage" title="Thank You!">
+
 
         <!-- Footer with Copyright message -->
         <div id="footer">
           Copyright &copy; 2019 Melchi
         </div>
 
-      </section>
-    </main>
+     
   </body>
 </html>
