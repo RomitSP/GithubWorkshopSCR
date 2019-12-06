@@ -6,7 +6,6 @@ header h1, #nav {
 .carousel {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-  cursor: pointer;
   font-size: 1em;
 }
 div.locations {
@@ -100,12 +99,12 @@ div.places {
 .carousel-caption {
   position: absolute !important;
   top: 10%;
-  margin-left: -50px;
-  
+  padding-right: 250px;
+  cursor: pointer;
 }
 .carousel-caption h1 {
   text-shadow: 5px 5px rgba(0, 0, 0, 0.3);
-  font-weight: 900;
-  color: #eb5844 ;
-  font-size: 5rem;
+  font-weight: 600;
+  color: #fff ;
+  font-size: 4rem;
 }

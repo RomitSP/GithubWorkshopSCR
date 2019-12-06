@@ -5,7 +5,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Vacation Package</title>
+	<title>Vacation Packages</title>
 	
 	<link rel="stylesheet" href="vPackagesForm.css" />
 	<link rel="stylesheet" href="footer.css">
@@ -91,7 +91,7 @@
 	<div class="container vPackages">
 		<div class="row">
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="caribbeanCSS">
-				<h1 class="blackshadow"><%= packages[0].PkgName %></h1>
+				<h1 class="blackshadow" onclick="window.location.replace('/register')"><%= packages[0].PkgName %></h1>
 				<h4 class="blue"> <%= packages[0].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[0].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[0].PkgEndDate.toDateString() %></p><br />
@@ -101,7 +101,7 @@
 			</div>
 			<br />
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="polyCSS">
-				<h2 class="blackshadow"><%= packages[1].PkgName %></h2>
+				<h2 class="blackshadow" onclick="window.location.replace('/register')"><%= packages[1].PkgName %></h2>
 				<h4 class="blue"><%= packages[1].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[1].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[1].PkgEndDate.toDateString() %></p><br />
@@ -113,7 +113,7 @@
 		<br />
 		<div class="row">
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="asiaCSS">
-				<h2 class="blackshadow"><%= packages[2].PkgName %></h2>
+				<h2 class="blackshadow" onclick="window.location.replace('/register')"><%= packages[2].PkgName %></h2>
 				<h4 class="blue"><%= packages[2].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[2].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[2].PkgEndDate.toDateString() %></p><br />
@@ -125,7 +125,7 @@
 
 			<div class="ml-1" class="mt-0" class="px-2" class="p-3" class="col-sm-6" id="europeCSS">
 
-				<h2 class="blackshadow"><%= packages[3].PkgName %></h2>
+				<h2 class="blackshadow" onclick="window.location.replace('/register')"><%= packages[3].PkgName %></h2>
 				<h4 class="blue"><%= packages[3].PkgDesc%></h4>
 				<p class="orange">Start Date: <%= packages[3].PkgStartDate.toDateString() %></p>
 				<p class="orange">End Date: <%= packages[3].PkgEndDate.toDateString() %></p><br />

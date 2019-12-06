@@ -175,4 +175,6 @@ padding-right: 10px;
 .vPackages {
   margin-bottom: 30px;
 }
-
+.blackshadow {
+  cursor: pointer;
+}

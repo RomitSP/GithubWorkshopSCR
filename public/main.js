@@ -8,3 +8,11 @@ $(function () {
 $(function () {
   $('[data-toggle="popover"]').popover()
 })
+
+setTimeout(function() {
+  $('.feature').slideUp('1000');
+}, 4000); 
+        
+
+        
+        
