@@ -70,6 +70,7 @@ app.post('/login', passport.authenticate('local', {
    failureFlash: true
 }));
 
+// This is for testing
 app.get('/rcontact', (req, res) => {
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
       " `AgtPosition`, `AgencyId` FROM `agents` LIMIT 3";
@@ -78,7 +79,6 @@ app.get('/rcontact', (req, res) => {
       if (err) throw err;
 
       sqlCon.query(sql, (err, agents) => {
-         console.log(agents);
          if (err) throw err;
          res.render('rcontact', { agents });
          connection.release();
