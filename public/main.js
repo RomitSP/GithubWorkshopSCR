@@ -11,7 +11,7 @@ $(function () {
 
 setTimeout(function() {
   $('.feature').slideUp('1000');
-}, 4000); 
+}, 9000); 
         
 
         

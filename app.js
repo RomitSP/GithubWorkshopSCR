@@ -164,7 +164,6 @@ app.post("/vPackages_form", (req, res) => {
          + "VALUES (?,?,?,?)";
       sqlCon.query(sql, data, (err, result, fields) => {
          if (err) throw err;
-         console.log(result);
          connection.release();
       });
       res.redirect('thanks')
@@ -193,13 +192,11 @@ function checkNotAuthenticated (req, res, next) {
    if (req.isAuthenticated()) {
       return res.redirect('/');
    }
-
    next();
 }
 app.use((req, res, next) => {
    res.status(404).redirect('404');
 });
-
 
 let server = app.listen(8001, () => {
    const host = server.address().address;
