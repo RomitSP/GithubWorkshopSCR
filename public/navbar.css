@@ -1,8 +1,6 @@
 * {
    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-   
  }
- 
  body{
    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
    url('./media/vacation.jpg');
@@ -10,7 +8,7 @@
    background-size: cover;
    background-position: left;
    background-attachment: fixed;
-   padding-top: 110px;
+   padding-top: 80px;
  }
  .navbar-header.col {
  padding: 0 !important;
@@ -20,6 +18,7 @@
    padding: 15px 50px 15px 40px;
    border-bottom: 1px solid #d6d6d6;
    box-shadow: 0 0 4px rgba(0,0,0,.1);
+   margin-bottom: 0 !important;
  }
  .nav-link img {
    border-radius: 50%;
@@ -81,29 +80,6 @@
    color: #aaa !important;
    background: transparent !important;
    border: 1px solid #eb5844;
- }
- .search-box {
-   position: relative;
- }	
- .search-box input.form-control {		
-   padding-right: 140px;
-   border-radius: 0;
-   padding-left: 0;
-   border-width: 0 0 1px 0;
-   box-shadow: none;
- }
- .search-box input.form-control:focus {		
-   border-color: #f08373;		
- }
- .search-box .input-group-addon {
-   min-width: 35px;
-   border: none;
-   background: transparent;
-   position: absolute;
-   right: 0;
-   z-index: 9;
-   padding: 7px 0 7px 7px;
-   height: 100%;
  }
  .navbar .nav-item a {
    font-size: 16px;

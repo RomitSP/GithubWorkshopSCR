@@ -50,3 +50,7 @@ div.places {
   color: black;
 }
 
+.jumbotron-muted {
+  background-image: url('./media/');
+  background-size: cover;
+}
