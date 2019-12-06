@@ -53,6 +53,7 @@ sqlCon.getConnection((err, connection) => {
 });
 
 
+// Coded by Chi. Login Test.
 initializePassport(
    passport, 
    /* This function returns a username/email if it is in the list of 
@@ -60,17 +61,19 @@ initializePassport(
    email => emailUsername.find(username => username === email )
 );
 
+// Coded by Chi. Login Test.
 app.get('/login', checkNotAuthenticated, (req, res) => {
    res.render('login');
 })
 
+// Coded by Chi. Login Test.
 app.post('/login', passport.authenticate('local', {
    successRedirect: '/',
    failureRedirect: '/login',
    failureFlash: true
 }));
 
-// This is for testing
+// This is for testing. Coded by Romit.
 app.get('/rcontact', (req, res) => {
    let sql = "SELECT `AgtFirstName`, `AgtLastName`, `AgtBusPhone`, `AgtEmail`," +
       " `AgtPosition`, `AgencyId` FROM `agents` LIMIT 3";
@@ -86,8 +89,7 @@ app.get('/rcontact', (req, res) => {
    });
 })
 
-// Images are place holder to render with each of the 4 vacation packages
-let images = ['Amsterdam.jpg', 'HotelView.jpg', 'Rialto.jpg', 'rome.jfif', 'Faraglioni.jpg'];
+// Coded by Stephen and Chi
 app.get('/vPackagesForm', (req, res) => {
    let sql = "SELECT `PkgName`, `PkgStartDate`, `PkgEndDate`, `PkgDesc`, " +
       "`PkgBasePrice` FROM `packages` ";
@@ -106,6 +108,7 @@ app.get('/vPackagesForm', (req, res) => {
 });
 
 
+// Coded by Chi & Romit
 // Dynamic generation of 'agents' from DB.
 app.get('/contact', (req, res) => {
 
@@ -123,6 +126,7 @@ app.get('/contact', (req, res) => {
    });
 });
 
+// Coded by Chi
 app.post('/register', async (req, res) => {
 
    try {
@@ -174,12 +178,14 @@ app.post("/vPackages_form", (req, res) => {
 
 // Passport method that auto clear session and log you out.
 // Requires method-override package
+// Coded by Chi. Login Test.
 app.delete('/logout', (req, res) => {
    req.logOut()
    res.redirect('login')
 });
 
 // Use to protect pages that un-authenticated should not access (i.e. Profile, User's Setting, etc)
+// Coded by Chi. Login Test.
 function checkAuthenticated (req, res, next) {
    if(req.isAuthenticated()) {
       return next();
@@ -188,12 +194,15 @@ function checkAuthenticated (req, res, next) {
 }
 
 // Use to protect pages that authenticated should not access (i.e. login page)
+// Coded by Chi. Login Test.
 function checkNotAuthenticated (req, res, next) {
    if (req.isAuthenticated()) {
       return res.redirect('/');
    }
    next();
 }
+
+// Coded by Chi.
 app.use((req, res, next) => {
    res.status(404).redirect('404');
 });

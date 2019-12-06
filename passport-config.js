@@ -1,3 +1,5 @@
+// Coded by Chi. Login Test.
+
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcrypt');
 
