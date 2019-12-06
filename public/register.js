@@ -1,5 +1,6 @@
-
-
+/*  Coded by Chi
+    Source: http://bootstrapvalidator.votintsev.ru/settings/ 
+*/
 
 $(document).ready(function () {
 
@@ -55,9 +56,9 @@ $(document).ready(function () {
           },
           phone: {
               validators: {
-                  notEmpty: {
-                      message: 'Please enter your phone number'
-                  },
+                //   notEmpty: {
+                //       message: 'Please enter your phone number'
+                //   },
                   phone: {
                       country: 'US',
                       message: 'Please enter a vaild phone number with area code'
@@ -69,9 +70,9 @@ $(document).ready(function () {
                   stringLength: {
                       min: 8,
                   },
-                  notEmpty: {
-                      message: 'Please enter your street address'
-                  }
+                //   notEmpty: {
+                //       message: 'Please enter your street address'
+                //   }
               }
           },
           city: {
@@ -79,9 +80,9 @@ $(document).ready(function () {
                   stringLength: {
                       min: 4,
                   },
-                  notEmpty: {
-                      message: 'Please enter your city'
-                  }
+                //   notEmpty: {
+                //       message: 'Please enter your city'
+                //   }
               }
           },
           country: {
@@ -89,23 +90,23 @@ $(document).ready(function () {
                   stringLength: {
                       min: 2,
                   },
-                  notEmpty: {
-                      message: 'Please select your country'
-                  }
+                //   notEmpty: {
+                //       message: 'Please select your country'
+                //   }
               }
           },
           province: {
               validators: {
-                  notEmpty: {
-                      message: 'Please select your province'
-                  }
+                //   notEmpty: {
+                //       message: 'Please select your province'
+                //   }
               }
           },
           pCode: {
               validators: {
-                  notEmpty: {
-                      message: 'Please enter your postal code'
-                  },
+                //   notEmpty: {
+                //       message: 'Please enter your postal code'
+                //   },
                   zipCode: {
                       country: 'countrySelect',
                       message: 'This is not a vaild %s code'

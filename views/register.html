@@ -1,3 +1,5 @@
+<!-- Coded by Chi -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Register</title>
    
-   <link rel="stylesheet" href="chi_reg_style.css">
+   <link rel="stylesheet" href="register.css">
    <link rel="stylesheet" href="footer.css">
    <link rel="stylesheet" href="navbar.css">
    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -20,7 +22,7 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" ></script>
-   <script type="text/javascript" src="chi_reg_script.js"></script>
+   <script type="text/javascript" src="register.js"></script>
 </head>
 
 <body>
@@ -70,11 +72,12 @@
 
             <!-- Form Name -->
             <legend>Registration</legend>
+            <div class="formInfo">Just need your <b>Name, Email,</b> and <b>Password</b></div><br/>
 
             <!-- Text input-->
 
             <div class="form-group">
-               <label class="col-md-4 control-label">First Name</label>
+               <label class="col-md-4 control-label isRequired">First Name</label>
                <div class="col-md-4 inputGroupContainer">
                   <div class="input-group">
                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -86,7 +89,7 @@
             <!-- Text input-->
 
             <div class="form-group">
-               <label class="col-md-4 control-label">Last Name</label>
+               <label class="col-md-4 control-label isRequired">Last Name</label>
                <div class="col-md-4 inputGroupContainer">
                   <div class="input-group">
                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -97,7 +100,7 @@
 
             <!-- Text input-->
             <div class="form-group">
-               <label class="col-md-4 control-label">E-Mail</label>
+               <label class="col-md-4 control-label isRequired">E-Mail</label>
                <div class="col-md-4 inputGroupContainer">
                   <div class="input-group">
                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
@@ -107,7 +110,7 @@
             </div>
 
             <div class="form-group">
-               <label class="col-md-4 control-label">Password</label>
+               <label class="col-md-4 control-label isRequired">Password</label>
                <div class="col-md-4 inputGroupContainer">
                   <div class="input-group">
                      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -220,10 +223,22 @@
             <div class="form-group">
                <label class="col-md-4 control-label"></label>
                <div class="col-md-4">
-                  <button type="submit" class="btn">Register <span
-                        class="glyphicon glyphicon-pencil"></span></button>
+                  <button type="submit" class="btn">Register 
+                     <span class="glyphicon glyphicon-pencil"></span>
+                  </button>
+                  
                </div>
             </div>
+
+            <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-4">
+                        <h4></span>  Already have an account? 
+                           <a href="/login" class="loginLink">Login here</a>
+                           <span class="glyphicon glyphicon-lock"></span> 
+                        </h4>
+                  </div>
+               </div>
 
          </fieldset>
       </form>

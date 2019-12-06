@@ -1,5 +1,5 @@
 	
-	//Preview videos for vacation package - made by Stephen
+	// Preview videos for vacation package - made by Stephen
 	function caribbeanVideo() 
 		{
 			window.open("https://www.youtube.com/watch?v=trmEq3e04a4")

@@ -1,3 +1,5 @@
+/* Coded by Romit */
+
 $( document ).ready(function() {
     // alert('READY')
     var images = $('.img-thumbnail-agent')
